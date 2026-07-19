@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign In</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="login" href="home.html"></a>
+    </header>
+
+    <main class="auth-wrapper">
+      <div class="auth-card">
+        <h2 class="auth-title">Sign in to your account</h2>
+
+        <form class="auth-form" action="#" method="post" novalidate>
+          <label for="loginUser">Email or username</label>
+          <input
+            id="loginUser"
+            name="username"
+            type="text"
+            placeholder="you@example.com"
+            required
+          />
+
+          <label for="loginPass">Password</label>
+          <input
+            id="loginPass"
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+            required
+          />
+
+          <div class="form-row">
+            <label class="checkbox">
+              <input type="checkbox" name="remember" /> Remember me
+            </label>
+            <a class="small-link" href="#">Forgot?</a>
+          </div>
+
+          <button type="button" id="loginSubmit" class="btn primary">
+            Sign in
+          </button>
+        </form>
+
+        <p class="muted">
+          Don't have an account? <a href="register.html">Create one</a>
+        </p>
+      </div>
+    </main>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("loginSubmit");
+
+        if (btn) {
+          btn.addEventListener("click", () => {
+            const userInputValue = document
+              .getElementById("loginUser")
+              .value.trim();
+            const passValue = document.getElementById("loginPass").value.trim();
+
+            if (!userInputValue || !passValue) {
+              return alert("Please fill all fields.");
+            }
+
+            loginUser({ identity: userInputValue, password: passValue });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

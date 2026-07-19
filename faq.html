@@ -1,0 +1,276 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        if (isLoggedIn) {
+          document.body.classList.add("logged-in");
+          const authLinks = document.querySelector(".auth-links");
+          if (authLinks) {
+            authLinks.innerHTML =
+              '<a class="button-btn1" href="#" id="logoutBtn">Logout</a>';
+            document
+              .getElementById("logoutBtn")
+              .addEventListener("click", (e) => {
+                e.preventDefault();
+                localStorage.removeItem("isLoggedIn");
+                localStorage.removeItem("userEmail");
+                document.body.classList.remove("logged-in");
+                window.location.reload();
+              });
+          }
+        }
+      });
+    </script>
+    <header class="logo">
+      <div><img src="images/icon/logo-1-1.png" alt="logo" /></div>
+    </header>
+
+    <div class="navbar">
+      <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="company.html">The Company</a>
+        <a href="services.html">Services</a>
+        <a class="button-btn1" href="faq.html">FAQ</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="auth-links">
+        <a class="button-btn1" href="login.html">Login</a>
+      </div>
+    </div>
+
+    <div class="sub-header">
+      <div class="sub-container">
+        <span class="page-title">FAQ</span>
+      </div>
+    </div>
+
+    <main class="Faq-containter">
+      <div class="faq-left">
+        <div class="faq-image">
+          <img src="images/icon/faq-1.jpg" alt="FAQ illustration" />
+        </div>
+
+        <div class="form">
+          <button class="button-btn-1" type="button">Ask US</button>
+          <form id="faqForm">
+            <label for="faqName">Your name(*)</label><br />
+            <input
+              type="text"
+              id="faqName"
+              name="your-name"
+              required
+            /><br /><br />
+
+            <label for="faqEmail">Your Email (*)</label><br />
+            <input
+              type="email"
+              id="faqEmail"
+              name="your-email"
+              required
+            /><br /><br />
+
+            <label for="faqSubject">Subject</label><br />
+            <input type="text" id="faqSubject" name="subject" /><br /><br />
+
+            <label for="faqDepartment">Business Department</label><br />
+            <select id="faqDepartment" name="business-department">
+              <option value="general">Business Department</option>
+              <option value="personal">Personal Department</option>
+              <option value="support">Support Department</option>
+              <option value="other">Other</option>
+            </select>
+            <br /><br />
+
+            <label for="faqQuestion">Your Question</label><br />
+            <textarea
+              id="faqQuestion"
+              name="question"
+              rows="5"
+              placeholder="Type your question here..."
+              required
+            ></textarea>
+            <br /><br />
+
+            <button type="button" id="faqSubmit" class="button-btn-1">
+              Ask
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="faq-description">
+        <div class="faq-title">
+          <h2>
+            <span class="span">━━ </span>Do you have
+            <span class="span">Questions?</span>
+          </h2>
+        </div>
+        <p class="faq-subtitle">
+          Please read questions below and if you cannot find your answer, please
+          send your question. We will answer you as soon as possible.
+        </p>
+        <h1><span class="circl">?</span>F.A.QS</h1>
+        <div class="accordion">
+          <button class="accordion-header" aria-expanded="false" type="button">
+            <span>How do I request a construction quote?</span>
+            <span class="accordion-arrow">↓</span>
+          </button>
+          <div class="accordion-body" hidden>
+            <p>
+              Visit our contact page or use the form to share your project
+              details. We will respond with a tailored estimate and next steps.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <button class="accordion-header" aria-expanded="false" type="button">
+            <span>What types of projects do you handle?</span>
+            <span class="accordion-arrow">↓</span>
+          </button>
+          <div class="accordion-body" hidden>
+            <p>
+              We handle residential and commercial construction, remodeling,
+              renovation, site planning, and civil construction services.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <button class="accordion-header" aria-expanded="false" type="button">
+            <span>Can I schedule a consultation?</span>
+            <span class="accordion-arrow">↓</span>
+          </button>
+          <div class="accordion-body" hidden>
+            <p>
+              Yes. Use our contact page or call us directly to schedule a
+              project consultation and review your requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="detail" id="detail-section">
+      <div class="detail-heading">
+        <div class="icon-circle" aria-hidden="true">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 10.5L12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10.5z"
+              fill="#fff"
+            />
+          </svg>
+        </div>
+        <h2 class="detail-text">Start a project with us today</h2>
+      </div>
+
+      <button class="button-btn" id="contact-toggle">
+        Contact us Today >>
+      </button>
+    </div>
+
+    <section class="company">
+      <div class="detail-discreption">
+        <p class="tittle-12">The Company</p>
+        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+        <p>
+          The Department of Construction promotes the <br />
+          safety of all people that build, work, and live in <br />
+          New York City by regulating the lawful use of <br />over one million
+          buildings..
+        </p>
+      </div>
+      <div class="contact">
+        <p class="tittle-12">Construction Office</p>
+        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+        <div>
+          <p>121 King Street, NewYork</p>
+          <p>+1(800) 333 44 55</p>
+          <p>newyork@gmail.com</p>
+          <p>+1(800) 333 99 88</p>
+          <p>@construction_live</p>
+        </div>
+      </div>
+
+      <div class="customer">
+        <p class="tittle-12">🕒 Working Hours</p>
+        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+        <div class="working-hour">
+          <p>
+            Our support available to help you 24 <br />hours a day, seven days a
+            week.
+          </p>
+          <p>Monday to Friday 8AM ━ 4PM</p>
+          <p>Saturday 8AM ━ 1PM</p>
+          <p>Sunday Support by Email</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <footer>© Copyright 2026. All Rights Reserved</footer>
+      <p>Privacy Policy</p>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // FAQ form submission
+        const faqSubmit = document.getElementById("faqSubmit");
+        if (faqSubmit) {
+          faqSubmit.addEventListener("click", () => {
+            const name = document.getElementById("faqName").value.trim();
+            const email = document.getElementById("faqEmail").value.trim();
+            const subject = document.getElementById("faqSubject").value.trim();
+            const department = document.getElementById("faqDepartment").value;
+            const question = document
+              .getElementById("faqQuestion")
+              .value.trim();
+
+            if (!name || !email || !question) {
+              return alert("Please fill in all required fields.");
+            }
+
+            submitFaqForm({ name, email, subject, department, question });
+          });
+        }
+
+        // Accordion functionality
+        document.querySelectorAll(".accordion-header").forEach((button) => {
+          button.addEventListener("click", () => {
+            const isOpen = button.getAttribute("aria-expanded") === "true";
+            button.setAttribute("aria-expanded", String(!isOpen));
+            const panel = button.nextElementSibling;
+            if (panel) {
+              panel.hidden = isOpen;
+            }
+          });
+        });
+
+        // Contact button functionality
+        const contactToggle = document.getElementById("contact-toggle");
+        if (contactToggle) {
+          contactToggle.addEventListener("click", () => {
+            contactToggle.textContent = "Good choice";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

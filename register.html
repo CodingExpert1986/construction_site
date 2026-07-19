@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create Account</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="home.html"></a>
+    </header>
+
+    <main class="auth-wrapper">
+      <div class="auth-card">
+        <h2 class="auth-title">Create an account</h2>
+
+        <form class="auth-form" action="#" method="post" novalidate>
+          <label for="regName">Full name</label>
+          <input
+            id="regName"
+            name="fullname"
+            type="text"
+            placeholder="Your name"
+            required
+          />
+
+          <label for="regEmail">Email address</label>
+          <input
+            id="regEmail"
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            required
+          />
+
+          <label for="regPass">Password</label>
+          <input
+            id="regPass"
+            name="password"
+            type="password"
+            placeholder="Create a password"
+            required
+          />
+
+          <label for="confirm">Confirm password</label>
+          <input
+            id="confirm"
+            name="confirm"
+            type="password"
+            placeholder="Repeat your password"
+            required
+          />
+
+          <label for="regPhone">Phone number</label>
+          <input
+            id="regPhone"
+            name="phone"
+            type="tel"
+            placeholder="Your phone number"
+            required
+          />
+
+          <div class="grid two-col">
+            <div>
+              <label for="birthdate">Birthdate</label>
+              <input id="birthdate" name="birthdate" type="date" />
+            </div>
+            <div>
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender">
+                <option value="">Prefer not to say</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Non-binary</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="button" id="regSubmit" class="btn primary">
+            Create account
+          </button>
+        </form>
+
+        <p class="muted">
+          Already have an account? <a href="login.html">Sign in</a>
+        </p>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("regSubmit");
+        if (btn) {
+          btn.addEventListener("click", () => {
+            const name = document.getElementById("regName").value.trim();
+            const email = document.getElementById("regEmail").value.trim();
+            const phone = document.getElementById("regPhone").value.trim();
+            const pass = document.getElementById("regPass").value.trim();
+            if (!name || !email || !phone || !pass)
+              return alert("Please fill all fields.");
+            registerUser({ name, email, phone, password: pass });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

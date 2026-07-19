@@ -1,0 +1,258 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        if (isLoggedIn) {
+          document.body.classList.add("logged-in");
+          const authLinks = document.querySelector(".auth-links");
+          if (authLinks) {
+            authLinks.innerHTML =
+              '<a class="button-btn1" href="#" id="logoutBtn">Logout</a>';
+            document
+              .getElementById("logoutBtn")
+              .addEventListener("click", (e) => {
+                e.preventDefault();
+                localStorage.removeItem("isLoggedIn");
+                localStorage.removeItem("userEmail");
+                document.body.classList.remove("logged-in");
+                window.location.reload();
+              });
+          }
+        }
+      });
+    </script>
+    <header class="logo">
+      <div><img src="images/icon/logo-1-1.png" alt="logo" /></div>
+    </header>
+
+    <div class="navbar">
+      <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="company.html">The Company</a>
+        <a class="button-btn1" href="services.html">Services</a>
+        <a href="faq.html">FAQ</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html"> Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="auth-links">
+        <a class="button-btn1" href="login.html">Login</a>
+      </div>
+    </div>
+
+    <div class="sub-header">
+      <div class="sub-container">
+        <span class="page-title">Services</span>
+      </div>
+    </div>
+
+    <main class="Servicess">
+      <div class="services-content">
+        <h1 class="servicee">
+          <span class="span">━━━</span> Our <span class="span"> Services</span>
+        </h1>
+        <p>
+          With over thirty years of experience in residential renovation design
+          and over 16,000 renovation plans delivered to this day.Home owners can
+          have confidence in their choice of a metal roofing Contractor knowing
+          they have met certain requirements.
+        </p>
+
+        <button class="button-btn-1">Request Custom Service</button>
+      </div>
+
+      <section class="service-cards">
+        <div class="service-card">
+          <img
+            src="images/icon/s1-1.jpg"
+            class="image1"
+            alt="Design & Building"
+          />
+          <div class="servicees-text">
+            <p>Design & <span class="span">Building</span></p>
+            <p>
+              Trusted experts delivering modern construction solutions with
+              precision, creativity, and lasting value.
+            </p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img
+            src="images/icon/s2-1.jpg"
+            class="image1"
+            alt="Condo Remodeling"
+          />
+          <div class="servicees-text">
+            <p>Condo <span class="span">Remodeling</span></p>
+            <p>
+              Thoughtful renovation work that refreshes your condo with clean
+              design, smart planning, and durable finishes.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="service12">
+      <div class="service-card" tabindex="0">
+        <img
+          src="images/icon/s3-1.jpg"
+          class="image1"
+          alt="Projects Management"
+        />
+        <div class="servicees-text">
+          <p>Projects <span class="span">Management</span></p>
+          <p>
+            Coordinated project delivery managing schedules, budgets, and teams
+            to ensure on-time, on-budget completion.
+          </p>
+        </div>
+      </div>
+      <div class="service-card" tabindex="0">
+        <img
+          src="images/icon/s4-1.jpg"
+          class="image1"
+          alt="Hardwood Flooring"
+        />
+        <div class="servicees-text">
+          <p>Hardwood <span class="span">Flooring</span></p>
+          <p>
+            Premium hardwood installation and finishing for durable, beautiful
+            floors that stand the test of time.
+          </p>
+        </div>
+      </div>
+      <div class="service-card" tabindex="0">
+        <img
+          src="images/icon/s5-1.jpg"
+          class="image1"
+          alt="Tiling & Painting"
+        />
+        <div class="servicees-text">
+          <p>Tiling & <span class="span">Painting</span></p>
+          <p>
+            Expert tile and paint finishes that transform surfaces with clean
+            lines and lasting visual appeal.
+          </p>
+        </div>
+      </div>
+    </div>
+    <section class="detail" id="detail-section">
+      <div class="detail-heading">
+        <div class="icon-circle" aria-hidden="true">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 10.5L12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10.5z"
+              fill="#fff"
+            />
+          </svg>
+        </div>
+        <h2 class="detail-text">Start a project with us today</h2>
+      </div>
+
+      <button class="button-btn" id="contact-toggle">
+        Contact us Today &gt;&gt;
+      </button>
+    </section>
+
+    <script>
+      document.querySelectorAll(".service-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          card.classList.toggle("active");
+        });
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            card.classList.toggle("active");
+          }
+        });
+      });
+
+      const contactToggle = document.getElementById("contact-toggle");
+
+      contactToggle.addEventListener("click", () => {
+        contactToggle.textContent = "Good choice";
+      });
+
+      // Make icon-circle navigate to projects page
+      const iconCircle = document.querySelector(".icon-circle");
+      if (iconCircle) {
+        iconCircle.style.cursor = "pointer";
+        iconCircle.addEventListener("click", () => {
+          window.location.href = "projects.html";
+        });
+      }
+    </script>
+
+    <section class="company">
+      <div class="detail-discreption">
+        <p class="tittle-12">The Company</p>
+        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+        <p>
+          The Department of Construction promotes the <br />
+          safety of all people that build, work, and live in <br />
+          New York City by regulating the lawful use of <br />over one million
+          buildings..
+        </p>
+      </div>
+      <div class="contact">
+        <p class="tittle-12">Construction Office</p>
+        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+        <div>
+          <p>121 King Street, NewYork</p>
+          <p>+1(800) 333 44 55</p>
+          <p>newyork@gmail.com</p>
+          <p>+1(800) 333 99 88</p>
+          <p>@construction_live</p>
+        </div>
+      </div>
+      <div class="customer">
+        <p class="tittle-12">🕒 Working Hours</p>
+        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+        <div class="working-hour">
+          <p>
+            Our support available to help you 24 <br />hours a day, seven days a
+            week.
+          </p>
+          <p>Monday to Friday 8AM ━ 4PM</p>
+          <p>Saturday 8AM ━ 1PM</p>
+          <p>Sunday Support by Email</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="alert-message" id="alertMessage">Good choice!</div>
+
+    <div class="footer">
+      <footer>Â© Copyright 2026. All Rights Reserved</footer>
+      <p>Privacy Policy</p>
+    </div>
+
+    <script>
+      function showGoodChoice() {
+        const alert = document.getElementById("alertMessage");
+        if (alert) {
+          alert.classList.add("show");
+          setTimeout(() => {
+            alert.classList.remove("show");
+          }, 2000);
+        }
+      }
+    </script>
+  </body>
+</html>

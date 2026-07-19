@@ -1,0 +1,451 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxury Property Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        if (isLoggedIn) {
+          document.body.classList.add("logged-in");
+          const authLinks = document.querySelector(".auth-links");
+          if (authLinks) {
+            authLinks.innerHTML =
+              '<a class="button-btn1" href="#" id="logoutBtn">Logout</a>';
+            document
+              .getElementById("logoutBtn")
+              .addEventListener("click", (e) => {
+                e.preventDefault();
+                localStorage.removeItem("isLoggedIn");
+                localStorage.removeItem("userEmail");
+                document.body.classList.remove("logged-in");
+                window.location.reload();
+              });
+          }
+        }
+      });
+    </script>
+    <header class="logo">
+      <div><img src="images/icon/logo-1-1.png" alt="logo" /></div>
+    </header>
+
+    <div class="navbar">
+      <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="company.html">The Company</a>
+        <a href="services.html">Services</a>
+        <a href="faq.html">FAQ</a>
+        <a class="button-btn1" href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="auth-links">
+        <a class="button-btn1" href="login.html">Login</a>
+      </div>
+    </div>
+
+    <div class="sub-header">
+      <div class="sub-container">
+        <span class="page-title">Projects</span>
+      </div>
+    </div>
+
+    <main class="projects-page">
+      <h1 class="projects-title">Exclusive Property Showcase</h1>
+
+      <button class="back-btn" id="backBtn" onclick="showMainGallery()">
+        ← Back to Gallery
+      </button>
+
+      <section class="projects-gallery" id="mainGallery">
+        <div class="project-item" onclick="showPropertyDetails('property1')">
+          <img
+            src="images/icon/Pa11.jpeg"
+            alt="Luxury Property 1"
+            class="project-image"
+          />
+          <div class="project-overlay">
+            <h2 class="project-title">Luxury Villa</h2>
+          </div>
+        </div>
+
+        <div class="project-item" onclick="showPropertyDetails('property2')">
+          <img
+            src="images/icon/pa2.jpeg"
+            alt="Luxury Property 2"
+            class="project-image"
+          />
+          <div class="project-overlay">
+            <h2 class="project-title">Luxury Neighborhood</h2>
+          </div>
+        </div>
+
+        <div class="project-item" onclick="showPropertyDetails('property3')">
+          <img
+            src="images/icon/front-view.jpg"
+            alt="Luxury Property 3"
+            class="project-image"
+          />
+          <div class="project-overlay">
+            <h2 class="project-title">Modern Estate</h2>
+          </div>
+        </div>
+
+        <div class="project-item" onclick="showPropertyDetails('property4')">
+          <img
+            src="images/icon/pa4.jpg"
+            alt="Luxury Property 4"
+            class="project-image"
+          />
+          <div class="project-overlay">
+            <h2 class="project-title">Contemporary Home</h2>
+          </div>
+        </div>
+
+        <div class="project-item" onclick="showPropertyDetails('property5')">
+          <img
+            src="images/icon/pa5.jpg"
+            alt="Luxury Property 5"
+            class="project-image"
+          />
+          <div class="project-overlay">
+            <h2 class="project-title">Garden Villa</h2>
+          </div>
+        </div>
+
+        <div class="project-item" onclick="showPropertyDetails('property6')">
+          <img
+            src="images/icon/pa6.jpg"
+            alt="Luxury Property 6"
+            class="project-image"
+          />
+          <div class="project-overlay">
+            <h2 class="project-title">Urban Retreat</h2>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="property-details"
+        id="propertyDetails"
+        style="display: none"
+      >
+        <div class="detail-view" id="detailView">
+          <!-- Left Panel: Features -->
+          <div class="features-panel">
+            <h2 class="property-name" id="propertyName">Property Name</h2>
+            <p class="property-description" id="propertyDescription">
+              Property description will appear here.
+            </p>
+            <div class="property-cost" id="propertyCost">
+              <span class="cost-label">Estimated Building Cost:</span>
+              <span class="cost-amount">$0</span>
+            </div>
+            <h3 style="margin-top: 20px; color: #0f172a">Key Features</h3>
+            <ul class="features-list" id="featuresList">
+              <!-- Features will be populated dynamically -->
+            </ul>
+          </div>
+
+          <div class="gallery-panel" id="galleryPanel"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ORANGE DETAIL SECTION - NOW AT THE TOP -->
+    <div class="detail" id="detail-section">
+      <div class="detail-heading">
+        <div class="icon-circle" aria-hidden="true">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 10.5L12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10.5z"
+              fill="#fff"
+            />
+          </svg>
+        </div>
+        <h2 class="detail-text">Start a project with us today</h2>
+      </div>
+
+      <button class="button-btn" id="contact-toggle">
+        Contact us Today >>
+      </button>
+    </div>
+
+    <section class="company">
+      <div class="detail-discreption">
+        <p class="tittle-12">The Company</p>
+        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+        <p>
+          The Department of Construction promotes the <br />
+          safety of all people that build, work, and live in <br />
+          New York City by regulating the lawful use of <br />over one million
+          buildings..
+        </p>
+      </div>
+      <div class="contact">
+        <p class="tittle-12">Construction Office</p>
+        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+        <dl>
+          <p>121 King Street, NewYork</p>
+          <p>+1(800) 333 44 55</p>
+          <p>newyork@gmail.com</p>
+          <p>+1(800) 333 99 88</p>
+          <p>@construction_live</p>
+        </dl>
+      </div>
+
+      <div class="customer">
+        <p class="tittle-12">🕒 Working Hours</p>
+        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+        <div class="working-hour">
+          <p>
+            Our support available to help you 24 <br />hours a day, seven days a
+            week.
+          </p>
+          <p>Monday to Friday 8AM — 4PM</p>
+          <p>Saturday 8AM — 1PM</p>
+          <p>Sunday Support by Email</p>
+        </div>
+      </div>
+    </section>
+    <div class="footer">
+      <footer>© Copyright 2026. All Rights Reserved</footer>
+      <p>Privacy Policy</p>
+    </div>
+
+    <script>
+      const mainGallery = document.getElementById("mainGallery");
+      const propertyDetails = document.getElementById("propertyDetails");
+      const backBtn = document.getElementById("backBtn");
+      const galleryPanel = document.getElementById("galleryPanel");
+
+      // Get property parameter from URL
+      function getUrlParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+
+      const propertyData = {
+        property1: {
+          name: "Luxury Villa",
+          description:
+            "An exquisite Mediterranean-style villa featuring expansive living spaces, premium finishes, and resort-style amenities. This stunning property boasts panoramic views, a private infinity pool, and meticulously landscaped gardens spanning over 2 acres.",
+          cost: "$2,850,000",
+          features: [
+            "Spacious Living Room & Dining",
+            "Fully fitted kitchen with Island",
+            "Maisonette Master bedroom",
+            "Walk in closet[s]",
+            "5 bedrooms En-suite",
+            "2 Rooms BQ ensuite",
+            "Double volume spaces",
+            "Gymnasium",
+            "Swimming Pool",
+          ],
+        },
+        property2: {
+          name: "Luxury Neighborhood",
+          description:
+            "A prestigious gated community offering elegant family homes with contemporary architecture. Each residence features smart home technology, energy-efficient systems, and access to exclusive community amenities including a clubhouse and tennis courts.",
+          cost: "$1,950,000",
+          features: [
+            "Open-concept living design",
+            "Gourmet kitchen with quartz countertops",
+            "4 spacious bedrooms",
+            "3 modern bathrooms",
+            "Private study/office",
+            "Two-car garage",
+            "Landscaped front yard",
+            "Community park access",
+          ],
+        },
+        property3: {
+          name: "Modern Estate",
+          description:
+            "A sleek contemporary estate showcasing minimalist design with clean lines and premium materials. Features include floor-to-ceiling windows, smart home automation, and a rooftop terrace with panoramic city views.",
+          cost: "$3,200,000",
+          features: [
+            "Floor-to-ceiling windows",
+            "Smart home automation system",
+            "Rooftop terrace with city views",
+            "Home theater room",
+            "Wine cellar",
+            "3-car garage",
+            "Energy-efficient solar panels",
+            "Private elevator",
+          ],
+        },
+        property4: {
+          name: "Contemporary Home",
+          description:
+            "A stylish urban residence designed for modern living with open spaces and premium amenities. Features include a gourmet kitchen, spa-like master bath, and a private balcony overlooking the city skyline.",
+          cost: "$1,450,000",
+          features: [
+            "Open floor plan",
+            "Gourmet kitchen with stainless steel appliances",
+            "Spa-like master bathroom",
+            "Private balcony",
+            "Hardwood floors throughout",
+            "In-unit laundry",
+            "Building fitness center access",
+            "24/7 concierge service",
+          ],
+        },
+        property5: {
+          name: "Garden Villa",
+          description:
+            "A serene retreat nestled among lush gardens, featuring indoor-outdoor living spaces and sustainable design elements. Includes a vegetable garden, rainwater harvesting system, and natural stone finishes throughout.",
+          cost: "$1,680,000",
+          features: [
+            "Indoor-outdoor living spaces",
+            "Vegetable garden area",
+            "Rainwater harvesting system",
+            "Natural stone finishes",
+            "4 bedrooms with garden views",
+            "3 full bathrooms",
+            "Outdoor kitchen patio",
+            "Sustainable bamboo flooring",
+          ],
+        },
+        property6: {
+          name: "Urban Retreat",
+          description:
+            "A sophisticated city apartment combining luxury with convenience in the heart of downtown. Features include a private gym, rooftop garden, and panoramic views of the skyline from every window.",
+          cost: "$980,000",
+          features: [
+            "Panoramic city views",
+            "Private gym access",
+            "Rooftop garden terrace",
+            "Modern kitchen appliances",
+            "2 spacious bedrooms",
+            "2 contemporary bathrooms",
+            "In-building parking",
+            "Doorman security",
+          ],
+        },
+      };
+
+      const propertyImages = {
+        property1: [
+          { src: "images/icon/pa1-2.jpeg", caption: "Exterior View" },
+          { src: "images/icon/pa1-12.jpeg", caption: "Living Room" },
+          { src: "images/icon/pa1-3.jpeg", caption: "Kitchen" },
+          { src: "images/icon/pa1-9.jpeg", caption: "Master Bedroom" },
+          { src: "images/icon/pa1-7.jpeg", caption: "Toilet" },
+        ],
+        property2: [
+          { src: "images/icon/pa2.jpeg", caption: "Exterior View" },
+          { src: "images/icon/pa2-1.jpeg", caption: "Living Room" },
+          { src: "images/icon/kitcheen.jpeg", caption: "Kitchen" },
+          { src: "images/icon/Master-bedrom2.webp", caption: "Master Bedroom" },
+        ],
+        property3: [
+          { src: "images/icon/vieww.jpg", caption: "Exterior View" },
+          { src: "images/icon/dinning.jpg", caption: "Living Room" },
+          { src: "images/icon/Kitchen.jpg", caption: "Kitchen" },
+          { src: "images/icon/master-bedroom.jpg", caption: "Master Bedroom" },
+          {
+            src: "images/icon/master-bathroom..jpeg",
+            caption: "Master Bathroom",
+          },
+        ],
+        property4: [
+          { src: "images/icon/pa4.jpg", caption: "Exterior View" },
+          { src: "images/icon/pa16-1.jpg", caption: "Living Room" },
+          { src: "images/icon/Kitchin.jpg", caption: "Kitchen" },
+          { src: "images/icon/modern-Bedroom.jpg", caption: "Master Bedroom" },
+        ],
+
+        property5: [
+          { src: "images/icon/pa5.jpg", caption: "Exterior View" },
+          { src: "images/icon/masterroom.jpg", caption: "Living Room" },
+          { src: "images/icon/kitchen1.jpg", caption: "Kitchen" },
+          { src: "images/icon/master.jpg", caption: "Master Bedroom" },
+        ],
+
+        property6: [
+          { src: "images/icon/pa6.jpg", caption: "Exterior View" },
+          { src: "images/icon/living-room.jpg", caption: "Living Room" },
+          { src: "images/icon/kitcheen.jpeg", caption: "Kitchen" },
+          { src: "images/icon/master1.jpg", caption: "Master Bedroom" },
+        ],
+      };
+
+      function showPropertyDetails(propertyId) {
+        mainGallery.style.display = "none";
+
+        propertyDetails.style.display = "block";
+        backBtn.style.display = "block";
+
+        // Update property details
+        const property = propertyData[propertyId];
+        document.getElementById("propertyName").textContent = property.name;
+        document.getElementById("propertyDescription").textContent =
+          property.description;
+        document
+          .getElementById("propertyCost")
+          .querySelector(".cost-amount").textContent = property.cost;
+
+        // Update features list
+        const featuresList = document.getElementById("featuresList");
+        featuresList.innerHTML = "";
+        property.features.forEach((feature) => {
+          const li = document.createElement("li");
+          li.textContent = feature;
+          featuresList.appendChild(li);
+        });
+
+        // Update gallery
+        galleryPanel.innerHTML = "";
+        propertyImages[propertyId].forEach((item) => {
+          const div = document.createElement("div");
+          div.className = "gallery-item";
+          div.innerHTML = `
+              <img src="${item.src}" alt="${item.caption}" />
+              <div class="img-caption">${item.caption}</div>
+            `;
+          galleryPanel.appendChild(div);
+        });
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function showMainGallery() {
+        mainGallery.style.display = "grid";
+        propertyDetails.style.display = "none";
+        backBtn.style.display = "none";
+      }
+
+      // Auto-show property from URL parameter on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        const propertyId = getUrlParameter("property");
+        if (propertyId && propertyData[propertyId]) {
+          showPropertyDetails(propertyId);
+        }
+      });
+    </script>
+
+    <script>
+      // Contact button functionality
+      const contactToggle = document.getElementById("contact-toggle");
+      if (contactToggle) {
+        contactToggle.addEventListener("click", () => {
+          contactToggle.textContent = "Good choice";
+        });
+      }
+    </script>
+  </body>
+</html>

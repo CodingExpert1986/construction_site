@@ -1,0 +1,236 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        if (isLoggedIn) {
+          document.body.classList.add("logged-in");
+          const authLinks = document.querySelector(".auth-links");
+          if (authLinks) {
+            authLinks.innerHTML =
+              '<a class="button-btn1" href="#" id="logoutBtn">Logout</a>';
+            document
+              .getElementById("logoutBtn")
+              .addEventListener("click", (e) => {
+                e.preventDefault();
+                localStorage.removeItem("isLoggedIn");
+                localStorage.removeItem("userEmail");
+                document.body.classList.remove("logged-in");
+                window.location.reload();
+              });
+          }
+        }
+      });
+    </script>
+    <header class="logo">
+      <div><img src="images/icon/logo-1-1.png" alt="logo" /></div>
+    </header>
+
+    <div class="navbar">
+      <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="company.html">The Company</a>
+        <a href="services.html">Services</a>
+        <a href="faq.html">FAQ</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a class="button-btn1" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="auth-links">
+        <a class="button-btn1" href="login.html">Login</a>
+      </div>
+    </div>
+
+    <div class="sub-header">
+      <div class="sub-container">
+        <span class="page-title">Contact</span>
+      </div>
+    </div>
+    <main>
+      <div class="map-top">
+        <iframe
+          src="https://www.google.com/maps?q=121%20King%20Street%20New%20York&output=embed"
+          aria-hidden="false"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="contact-image-text">
+        <div class="contact-left">
+          <img src="images/icon/customer .jpg" alt="" />
+          <div class="contact-details">
+            <p><strong>📞 Phone</strong></p>
+            <p>+1 (800) 333 44 53</p>
+            <p><strong>Email</strong></p>
+            <p>building@yoursite.com</p>
+            <p><strong>📍 Address</strong></p>
+            <p>121 King Street, New York</p>
+          </div>
+        </div>
+        <div class="contact-description">
+          <h4>
+            <span class="span">━━━</span
+            ><strong
+              >Contact The<span class="span">Construction Company</span></strong
+            >
+          </h4>
+          <p>
+            Call or submit online form to request an estimate or for general
+            questions about Company Certified Contractors and our services. We
+            look forward to serving you!
+          </p>
+          <div class="contact-form">
+            <form id="contactForm">
+              <label for="contactName">Your name(*)</label>
+              <input type="text" id="contactName" name="your-name" required />
+
+              <label for="contactEmail">Your Email (*)</label>
+              <input
+                type="email"
+                id="contactEmail"
+                name="your-email"
+                required
+              />
+
+              <label for="contactSubject">Subject</label>
+              <input type="text" id="contactSubject" name="subject" />
+
+              <label for="contactDepartment">Business Department</label>
+              <select id="contactDepartment" name="business-department">
+                <option value="general">Business Department</option>
+                <option value="personal">Personal Department</option>
+                <option value="support">Support Department</option>
+                <option value="other">Other</option>
+              </select>
+
+              <label for="contactMessage">Your Message</label>
+              <textarea
+                id="contactMessage"
+                name="message"
+                rows="6"
+                placeholder="Type your message here..."
+                required
+              ></textarea>
+
+              <button type="button" id="contactSubmit" class="button-btnn">
+                Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="detail" id="detail-section">
+      <div class="detail-heading">
+        <div class="icon-circle" aria-hidden="true">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 10.5L12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10.5z"
+              fill="#fff"
+            />
+          </svg>
+        </div>
+        <h2 class="detail-text">Start a new project with us</h2>
+      </div>
+
+      <button class="button-btn" id="contact-toggle">
+        Contact us Today >>
+      </button>
+    </div>
+
+    <section class="company">
+      <div class="detail-discreption">
+        <p class="tittle-12">The Company</p>
+        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+        <p>
+          The Department of Construction promotes the <br />
+          safety of all people that build, work, and live in <br />
+          New York City by regulating the lawful use of <br />over one million
+          buildings..
+        </p>
+      </div>
+      <div class="contact">
+        <p class="tittle-12">Construction Office</p>
+        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+        <div>
+          <p>121 King Street, NewYork</p>
+          <p>+1(800) 333 44 55</p>
+          <p>newyork@gmail.com</p>
+          <p>+1(800) 333 99 88</p>
+          <p>@construction_live</p>
+        </div>
+      </div>
+
+      <div class="customer">
+        <p class="tittle-12">🕒 Working Hours</p>
+        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+        <div class="working-hour">
+          <p>
+            Our support available to help you 24 <br />hours a day, seven days a
+            week.
+          </p>
+          <p>Monday to Friday 8AM ━ 4PM</p>
+          <p>Saturday 8AM ━ 1PM</p>
+          <p>Sunday Support by Email</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <footer>© Copyright 2026. All Rights Reserved</footer>
+      <p>Privacy Policy</p>
+    </div>
+
+    <script>
+      // Contact form submission
+      document.addEventListener("DOMContentLoaded", () => {
+        const contactSubmit = document.getElementById("contactSubmit");
+        if (contactSubmit) {
+          contactSubmit.addEventListener("click", () => {
+            const name = document.getElementById("contactName").value.trim();
+            const email = document.getElementById("contactEmail").value.trim();
+            const subject = document
+              .getElementById("contactSubject")
+              .value.trim();
+            const department =
+              document.getElementById("contactDepartment").value;
+            const message = document
+              .getElementById("contactMessage")
+              .value.trim();
+
+            if (!name || !email || !message) {
+              return alert("Please fill in all required fields.");
+            }
+
+            submitContactForm({ name, email, subject, department, message });
+          });
+        }
+
+        // Contact button functionality
+        const contactToggle = document.getElementById("contact-toggle");
+        if (contactToggle) {
+          contactToggle.addEventListener("click", () => {
+            contactToggle.textContent = "Good choice";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
