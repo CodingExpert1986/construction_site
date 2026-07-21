@@ -1713,11 +1713,18 @@ select {
   align-items: center;
 }
 
-.features-list li::before {
-  content: "âœ¦";
-  color: #ff9e20;
-  margin-right: 15px;
-  font-size: 1.2rem;
+.features-list li .check-icon {
+  display: inline-flex;
+  background-color: #ff9e20;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  color: #fff;
+  border-radius: 50%;
+  margin-right: 12px;
+  font-size: 0.8rem;
 }
 
 .gallery-panel {
@@ -1829,8 +1836,7 @@ select {
   scrollbar-width: thin;
   scrollbar-color: #0f172a #ff9e20;
 }
-
-.home-containter .projects-scroll-container::-webkit-scrollbar {
+``` .home-containter .projects-scroll-container::-webkit-scrollbar {
   height: 8px;
 }
 

@@ -194,6 +194,11 @@
           New York City by regulating the lawful use of <br />over one million
           buildings..
         </p>
+
+        <img src="images/icon/facebook-logo.png" alt="facebook" />
+        <img src="images/icon/twitter-logo.png" alt="twitter" />
+        <img src="images/icon/youtube-logo.png" alt="youtube" />
+        <img src="images/icon/instagram-logo.png" alt="instagram" />
       </div>
       <div class="contact">
         <p class="tittle-12">Construction Office</p>
@@ -404,7 +409,7 @@
         featuresList.innerHTML = "";
         property.features.forEach((feature) => {
           const li = document.createElement("li");
-          li.textContent = feature;
+          li.innerHTML = `<span class="check-icon">✓</span> ${feature}`;
           featuresList.appendChild(li);
         });
 

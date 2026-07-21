@@ -427,22 +427,20 @@
         if (isLoggedIn) {
           // Logged in: video (2) -> house (1) -> video (2) -> ...
           if (slideIndex === 2) {
-            slideIndex = 1; // After video, go to house
+            slideIndex = 1;
           } else {
-            slideIndex = 2; // Show video
+            slideIndex = 2;
           }
         } else {
-          // Not logged in: cycle between slides 0 and 1
           slideIndex = (slideIndex + 1) % 2;
         }
         showSlide(slideIndex);
       }
 
-      // Show video first for logged-in users on page load
       document.addEventListener("DOMContentLoaded", () => {
         const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
         if (isLoggedIn) {
-          slideIndex = 2; // Start with video slide
+          slideIndex = 2;
           showSlide(slideIndex);
         }
       });
@@ -579,6 +577,12 @@
           New York City by regulating the lawful use of <br />over one million
           buildings..
         </p>
+        <div>
+          <img src="images/icon/facebook-logo.png" alt="facebook" />
+          <img src="images/icon/twitter-logo.png" alt="twitter" />
+          <img src="images/icon/youtube-logo.png" alt="youtube" />
+          <img src="images/icon/instagram-logo.png" alt="instagram" />
+        </div>
       </div>
       <div class="contact">
         <p class="tittle-12">Construction Office</p>
