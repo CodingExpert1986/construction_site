@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  if (isLoggedIn) {
+    if (isLoggedIn) {
     document.body.classList.add("logged-in");
 
     const authLinks = document.getElementById("authLinks");
@@ -31,6 +31,29 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "home.html"; // Go home after logout
       });
     }
+  }
+
+  // Hamburger menu toggle for mobile navigation
+  const hamburger = document.getElementById("hamburgerMenu");
+  const navbar = document.querySelector(".navbar");
+  if (hamburger && navbar) {
+    hamburger.addEventListener("click", () => {
+      const isOpen = navbar.classList.contains("nav-open");
+      navbar.classList.toggle("nav-open");
+      hamburger.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    // Close mobile menu when a nav link is clicked
+    navbar.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (
+        link &&
+        (link.closest(".nav-links") || link.closest(".auth-links"))
+      ) {
+        navbar.classList.remove("nav-open");
+        hamburger.setAttribute("aria-expanded", "false");
+      }
+    });
   }
 });
 
