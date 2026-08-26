@@ -3,48 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ</title>
+    <title>Faq</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <script src="script.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-        if (isLoggedIn) {
-          document.body.classList.add("logged-in");
-          const authLinks = document.querySelector(".auth-links");
-          if (authLinks) {
-            authLinks.innerHTML =
-              '<a class="button-btn1" href="#" id="logoutBtn">Logout</a>';
-            document
-              .getElementById("logoutBtn")
-              .addEventListener("click", (e) => {
-                e.preventDefault();
-                localStorage.removeItem("isLoggedIn");
-                localStorage.removeItem("userEmail");
-                document.body.classList.remove("logged-in");
-                window.location.reload();
-              });
-          }
-        }
-      });
-    </script>
+
     <header class="logo">
       <div><img src="images/icon/logo-1-1.png" alt="logo" /></div>
     </header>
 
     <div class="navbar">
       <nav class="nav-links">
-        <a href="home.html">Home</a>
+        <a class="button-btn1" href="home.html">Home</a>
         <a href="company.html">The Company</a>
         <a href="services.html">Services</a>
-        <a class="button-btn1" href="faq.html">FAQ</a>
+        <a href="faq.html">FAQ</a>
         <a href="projects.html">Projects</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <div class="auth-links">
+
+      <div class="auth-links" id="authLinks">
         <a class="button-btn1" href="login.html">Login</a>
       </div>
     </div>
@@ -191,10 +171,10 @@
         <p class="tittle-12">The Company</p>
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <p>
-          The Department of Construction promotes the <br />
-          safety of all people that build, work, and live in <br />
-          New York City by regulating the lawful use of <br />over one million
-          buildings..
+          "The Department of Buildings promotes the safety of all people that
+          build, work, and live in winter haven Florida by regulating the lawful
+          use of over one million buildings and construction sites across the
+          five boroughs."
         </p>
 
         <img src="images/icon/facebook-logo.png" alt="facebook" />
@@ -206,11 +186,11 @@
         <p class="tittle-12">Construction Office</p>
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <div>
-          <p>121 King Street, NewYork</p>
-          <p>+1(800) 333 44 55</p>
-          <p>newyork@gmail.com</p>
-          <p>+1(800) 333 99 88</p>
-          <p>@construction_live</p>
+          <p>121 E Kings Way, Winter Park, FL 32789</p>
+          <p>+1(505)709 41 03</p>
+          <p>3Dcontructionlimited@gmail.com</p>
+          <p>+1(949) 264 96 28</p>
+          <p>@3dconstructionlimted_live</p>
         </div>
       </div>
 
@@ -230,10 +210,9 @@
     </section>
 
     <div class="footer">
-      <footer>© Copyright 2026. All Rights Reserved</footer>
-      <p>Privacy Policy</p>
+      <footer>&copy; Copyright 2010 &ndash; 2026. All Rights Reserved.</footer>
+      <p><a href="#privacy" class="privacy-link">Privacy Policy</a></p>
     </div>
-
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         // FAQ form submission
@@ -256,7 +235,6 @@
           });
         }
 
-        // Accordion functionality
         document.querySelectorAll(".accordion-header").forEach((button) => {
           button.addEventListener("click", () => {
             const isOpen = button.getAttribute("aria-expanded") === "true";

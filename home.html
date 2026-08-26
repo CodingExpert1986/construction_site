@@ -3,34 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Project</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <script src="script.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-        if (isLoggedIn) {
-          document.body.classList.add("logged-in");
 
-          const authLinks = document.getElementById("authLinks");
-          if (authLinks) {
-            authLinks.innerHTML =
-              '<a class="button-btn1" href="#" id="logoutBtn">Logout</a>';
-            document
-              .getElementById("logoutBtn")
-              .addEventListener("click", (e) => {
-                e.preventDefault();
-                localStorage.removeItem("isLoggedIn");
-                localStorage.removeItem("userEmail");
-                document.body.classList.remove("logged-in");
-                window.location.reload();
-              });
-          }
-        }
-      });
-    </script>
     <header class="logo">
       <div><img src="images/icon/logo-1-1.png" alt="logo" /></div>
     </header>
@@ -51,568 +29,582 @@
       </div>
     </div>
 
-    <main class="container">
-      <div class="slider-container">
-        <div class="slide active" id="slide0">
-          <div class="title">
-            <h1>Build With Ingenuity</h1>
-            <p>Leading the way in building and civil construction</p>
+    <main class="container-box">
+      <section class="container">
+        <div class="slider-container">
+          <div class="slide active" id="slide0">
+            <div class="title">
+              <h1>Build With Ingenuity</h1>
+              <p>Leading the way in building and civil construction</p>
+            </div>
+          </div>
+          <div class="slide" id="slide1">
+            <div class="title-1">
+              <p>BEST MODERN TECHONLOGIES FOR</p>
+              <h3 class="subtitle-text">CONTRUCTION & BUILDING</h3>
+            </div>
+          </div>
+          <div class="slide" id="slide2">
+            <video id="welcomeVideo" autoplay muted loop playsinline>
+              <source src="vide0/video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
           </div>
         </div>
-        <div class="slide" id="slide1">
-          <div class="title-1">
-            <p>BEST MODERN TECHONLOGIES FOR</p>
-            <h3 class="subtitle-text">CONTRUCTION & BUILDING</h3>
+      </section>
+
+      <section class="subtitle">
+        <div class="content">
+          <div class="service-intro">
+            <h1>
+              <span class="span">━━━ </span>Building it better in
+              <span class="span">Concrete</span>
+            </h1>
+            <p>The Department of Building promotes the safety build</p>
           </div>
-        </div>
-        <div class="slide" id="slide2">
-          <video id="welcomeVideo" autoplay muted loop playsinline>
-            <source src="vide0/video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="slider-dots">
-          <span class="dot active" onclick="currentSlide(0)"></span>
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-      </div>
-    </main>
-    <section class="subtitle">
-      <div class="content">
-        <div class="service-intro">
-          <h1>
-            <span class="span">━━━ </span>Building it better in
-            <span class="span">Concrete</span>
-          </h1>
-          <p>The Department of Building promotes the safety build</p>
-        </div>
 
-        <div class="description">
-          <div>
-            <h1>Design & Building</h1>
-            <p>
-              Service currently available at the <br />
-              Department's Development HUB have <br />
-              been enhanced
-            </p>
-          </div>
-          <div>
-            <h1>Safe Construction</h1>
-            <p>
-              Applicants and Owners can review plans <br />
-              and objections alongside their plan <br />
-              examiner virtually
-            </p>
-          </div>
-          <div>
-            <h1>Remodeling</h1>
-            <p>
-              The virtual review software eliminates <br />
-              the need for developers to visit a <br />
-              borough office
-            </p>
-          </div>
-          <div>
-            <h1>Tiling & Painting</h1>
-            <p>
-              Will allow the applicant to <br />
-              access reviewer comments and <br />
-              objections online
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <img src="images/icon/model1-1.jpg" class="img" alt="" />
-    </section>
-
-    <section class="home-containter">
-      <div class="projects-header">
-        <h2><span class="span"></span>Latest Projects</h2>
-        <p>Check out our latest construction projects around the world</p>
-      </div>
-
-      <div class="projects-scroll-container">
-        <div class="projects-gallery" id="mainGallery">
-          <a href="projects.html?property=property1" class="project-item">
-            <img
-              src="images/icon/Pa11.jpeg"
-              alt="Luxury Property 1"
-              class="project-image"
-            />
-            <div class="project-overlay">
-              <h2 class="project-title">Luxury Villa</h2>
-            </div>
-          </a>
-
-          <a href="projects.html?property=property2" class="project-item">
-            <img
-              src="images/icon/pa2.jpeg"
-              alt="Luxury Property 2"
-              class="project-image"
-            />
-            <div class="project-overlay">
-              <h2 class="project-title">Luxury Neighborhood</h2>
-            </div>
-          </a>
-
-          <a href="projects.html?property=property3" class="project-item">
-            <img
-              src="images/icon/front-view.jpg"
-              alt="Luxury Property 3"
-              class="project-image"
-            />
-            <div class="project-overlay">
-              <h2 class="project-title">Modern Estate</h2>
-            </div>
-          </a>
-
-          <a href="projects.html?property=property4" class="project-item">
-            <img
-              src="images/icon/pa4.jpg"
-              alt="Luxury Property 4"
-              class="project-image"
-            />
-            <div class="project-overlay">
-              <h2 class="project-title">Contemporary Home</h2>
-            </div>
-          </a>
-
-          <a href="projects.html?property=property5" class="project-item">
-            <img
-              src="images/icon/pa5.jpg"
-              alt="Luxury Property 5"
-              class="project-image"
-            />
-            <div class="project-overlay">
-              <h2 class="project-title">Garden Villa</h2>
-            </div>
-          </a>
-
-          <a href="projects.html?property=property6" class="project-item">
-            <img
-              src="images/icon/pa6.jpg"
-              alt="Luxury Property 6"
-              class="project-image"
-            />
-            <div class="project-overlay">
-              <h2 class="project-title">Urban Retreat</h2>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="scroll-dots">
-        <span
-          class="scroll-dot active"
-          data-slide="0"
-          tabindex="0"
-          role="button"
-          aria-label="Go to slide 1"
-        ></span>
-        <span
-          class="scroll-dot"
-          data-slide="1"
-          tabindex="0"
-          role="button"
-          aria-label="Go to slide 2"
-        ></span>
-        <span
-          class="scroll-dot"
-          data-slide="2"
-          tabindex="0"
-          role="button"
-          aria-label="Go to slide 3"
-        ></span>
-        <span
-          class="scroll-dot"
-          data-slide="3"
-          tabindex="0"
-          role="button"
-          aria-label="Go to slide 4"
-        ></span>
-        <span
-          class="scroll-dot"
-          data-slide="4"
-          tabindex="0"
-          role="button"
-          aria-label="Go to slide 5"
-        ></span>
-        <span
-          class="scroll-dot"
-          data-slide="5"
-          tabindex="0"
-          role="button"
-          aria-label="Go to slide 6"
-        ></span>
-      </div>
-    </section>
-    <section class="team-section">
-      <img src="images/icon/teamwork.webp" alt=" team" />
-      <div class="team-content">
-        <h3>We build with care</h3>
-        <p>
-          Our team delivers quality construction services from design through
-          completion. Tell us about your project and we'll get back with a
-          tailored plan.
-        </p>
-        <div class="team-features">
-          <p><span class="check-icon">✓</span> We Are Creative Team</p>
-          <p><span class="check-icon">✓</span> Quality Commitment</p>
-          <p><span class="check-icon">✓</span> Honest and Dependable</p>
-          <p><span class="check-icon">✓</span> We Are Always Improving</p>
-        </div>
-        <a href="company.html" class="team-readmore"
-          >Read more detail <span class="arrow">></span></a
-        >
-      </div>
-    </section>
-
-    <section class="stats-section">
-      <div class="stats-container">
-        <div class="stat-item">
-          <button class="stat-button" id="yearsBtn">
-            <span class="stat-number" data-target="57">1</span>
-            <span class="stat-label">Years of Experience</span>
-          </button>
-        </div>
-        <div class="stat-item">
-          <button class="stat-button" id="projectsBtn">
-            <span class="stat-number" data-target="86">1</span>
-            <span class="stat-label">Projects Done</span>
-          </button>
-        </div>
-        <div class="stat-item">
-          <button class="stat-button" id="awardsBtn">
-            <span class="stat-number" data-target="98">1</span>
-            <span class="stat-label">Awards Winning</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonials-section">
-      <div class="testimonials-header">
-        <h1><span class="span">━━━</span> Testimonials</h1>
-        <p>Check out why our customers loves us in each projects</p>
-      </div>
-      <div class="testimonials-container">
-        <button class="testimonial-nav prev" onclick="prevTestimonial()">
-          <
-        </button>
-        <div class="testimonials-wrapper" id="testimonialsWrapper">
-          <div class="testimonials-slider" id="testimonialsSlider">
-            <div class="testimonial-card">
-              <p class="testimonial-text">
-                "Excellent construction work! The team delivered our project on
-                time and exceeded our expectations. Highly recommended for
-                quality construction services."
+          <div class="description">
+            <div>
+              <h1>Design & Building</h1>
+              <p>
+                Service currently available at the <br />
+                Department's Development HUB have <br />
+                been enhanced
               </p>
-              <div class="testimonial-author">
-                <h4>John Smith</h4>
-                <p>Property Owner</p>
-              </div>
             </div>
-            <div class="testimonial-card">
-              <p class="testimonial-text">
-                "Professional and reliable team. They transformed our vision
-                into reality with exceptional attention to detail and
-                craftsmanship."
+            <div>
+              <h1>Safe Construction</h1>
+              <p>
+                Applicants and Owners can review plans <br />
+                and objections alongside their plan <br />
+                examiner virtually
               </p>
-              <div class="testimonial-author">
-                <h4>Sarah Johnson</h4>
-                <p>Architect</p>
-              </div>
             </div>
-            <div class="testimonial-card">
-              <p class="testimonial-text">
-                "Outstanding service from start to finish. The construction
-                quality is top-notch and the team is always responsive to our
-                needs."
+            <div>
+              <h1>Remodeling</h1>
+              <p>
+                The virtual review software eliminates <br />
+                the need for developers to visit a <br />
+                borough office
               </p>
-              <div class="testimonial-author">
-                <h4>Michael Brown</h4>
-                <p>Contractor</p>
-              </div>
             </div>
-            <div class="testimonial-card">
-              <p class="testimonial-text">
-                "Best construction company we've worked with. They understand
-                the importance of safety and quality in every project."
+            <div>
+              <h1>Tiling & Painting</h1>
+              <p>
+                Will allow the applicant to <br />
+                access reviewer comments and <br />
+                objections online
               </p>
-              <div class="testimonial-author">
-                <h4>Emily Davis</h4>
-                <p>Project Manager</p>
-              </div>
-            </div>
-            <div class="testimonial-card">
-              <p class="testimonial-text">
-                "Amazing attention to detail and customer service. Our
-                renovation project was completed with precision and care."
-              </p>
-              <div class="testimonial-author">
-                <h4>David Wilson</h4>
-                <p>Homeowner</p>
-              </div>
             </div>
           </div>
         </div>
-        <button class="testimonial-nav next" onclick="nextTestimonial()">
+
+        <img src="images/icon/model1-1.jpg" class="img" alt="" />
+      </section>
+
+      <section class="home-containter">
+        <div class="projects-header">
+          <h2><span class="span"></span>Latest Projects</h2>
+          <p>Check out our latest construction projects around the world</p>
+        </div>
+
+        <div class="projects-scroll-container">
+          <div class="projects-gallery" id="mainGallery">
+            <a href="projects.html?property=property1" class="project-item">
+              <img
+                src="images/icon/Pa11.jpeg"
+                alt="Luxury Property 1"
+                class="project-image"
+              />
+              <div class="project-overlay">
+                <h2 class="project-title">Luxury Villa</h2>
+              </div>
+            </a>
+
+            <a href="projects.html?property=property2" class="project-item">
+              <img
+                src="images/icon/pa2.jpeg"
+                alt="Luxury Property 2"
+                class="project-image"
+              />
+              <div class="project-overlay">
+                <h2 class="project-title">Luxury Neighborhood</h2>
+              </div>
+            </a>
+
+            <a href="projects.html?property=property3" class="project-item">
+              <img
+                src="images/icon/front-view.jpg"
+                alt="Luxury Property 3"
+                class="project-image"
+              />
+              <div class="project-overlay">
+                <h2 class="project-title">Modern Estate</h2>
+              </div>
+            </a>
+
+            <a href="projects.html?property=property4" class="project-item">
+              <img
+                src="images/icon/pa4.jpg"
+                alt="Luxury Property 4"
+                class="project-image"
+              />
+              <div class="project-overlay">
+                <h2 class="project-title">Contemporary Home</h2>
+              </div>
+            </a>
+
+            <a href="projects.html?property=property5" class="project-item">
+              <img
+                src="images/icon/pa5.jpg"
+                alt="Luxury Property 5"
+                class="project-image"
+              />
+              <div class="project-overlay">
+                <h2 class="project-title">Garden Villa</h2>
+              </div>
+            </a>
+
+            <a href="projects.html?property=property6" class="project-item">
+              <img
+                src="images/icon/pa6.jpg"
+                alt="Luxury Property 6"
+                class="project-image"
+              />
+              <div class="project-overlay">
+                <h2 class="project-title">Urban Retreat</h2>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="scroll-dots">
+          <span
+            class="scroll-dot active"
+            data-slide="0"
+            tabindex="0"
+            role="button"
+            aria-label="Go to slide 1"
+          ></span>
+          <span
+            class="scroll-dot"
+            data-slide="1"
+            tabindex="0"
+            role="button"
+            aria-label="Go to slide 2"
+          ></span>
+          <span
+            class="scroll-dot"
+            data-slide="2"
+            tabindex="0"
+            role="button"
+            aria-label="Go to slide 3"
+          ></span>
+          <span
+            class="scroll-dot"
+            data-slide="3"
+            tabindex="0"
+            role="button"
+            aria-label="Go to slide 4"
+          ></span>
+          <span
+            class="scroll-dot"
+            data-slide="4"
+            tabindex="0"
+            role="button"
+            aria-label="Go to slide 5"
+          ></span>
+          <span
+            class="scroll-dot"
+            data-slide="5"
+            tabindex="0"
+            role="button"
+            aria-label="Go to slide 6"
+          ></span>
+        </div>
+      </section>
+      <section class="team-section">
+        <img src="images/icon/teamwork.webp" alt=" team" />
+        <div class="team-content">
+          <h3>We build with care</h3>
+          <p>
+            Our team delivers quality construction services from design through
+            completion. Tell us about your project and we'll get back with a
+            tailored plan.
+          </p>
+          <div class="team-features">
+            <p><span class="check-icon">✓</span> We Are Creative Team</p>
+            <p><span class="check-icon">✓</span> Quality Commitment</p>
+            <p><span class="check-icon">✓</span> Honest and Dependable</p>
+            <p><span class="check-icon">✓</span> We Are Always Improving</p>
+          </div>
+          <a href="company.html" class="team-readmore"
+            >Read more detail <span class="arrow">></span></a
           >
-        </button>
-      </div>
-    </section>
-
-    <div class="clients-partners">
-      <p>Clients & Partners</p>
-      <div class="clients-container">
-        <img src="images/icon/log1.jpg" alt="Client 1" class="client-logo" />
-        <img src="images/icon/logo 2.png" alt="Client 2" class="client-logo" />
-        <img src="images/icon/logo3.jpg" alt="Client 3" class="client-logo" />
-        <img src="images/icon/logo4.jpg" alt="Client 4" class="client-logo" />
-        <img src="images/icon/logo5.png" alt="Client 5" class="client-logo" />
-        <img
-          src="images/icon/PC-Logo-792d3a32.webp"
-          alt="Client 6"
-          class="client-logo"
-        />
-        <img src="images/icon/logo 6.jpg" alt="Client 7" class="client-logo" />
-      </div>
-    </div>
-
-    <section class="detail" id="detail-section">
-      <div class="detail-heading">
-        <div class="icon-circle" aria-hidden="true">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M3 10.5L12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10.5z"
-              fill="#fff"
-            />
-          </svg>
         </div>
-        <h2 class="detail-text">Start a project with us today</h2>
+      </section>
+
+      <section class="stats-section">
+        <div class="stats-container">
+          <div class="stat-item">
+            <button class="stat-button" id="yearsBtn">
+              <span class="stat-number" data-target="30">1</span>
+              <span class="stat-label">Years of Experience</span>
+            </button>
+          </div>
+          <div class="stat-item">
+            <button class="stat-button" id="projectsBtn">
+              <span class="stat-number" data-target="60">1</span>
+              <span class="stat-label">Projects Done</span>
+            </button>
+          </div>
+          <div class="stat-item">
+            <button class="stat-button" id="awardsBtn">
+              <span class="stat-number" data-target="15">1</span>
+              <span class="stat-label">Awards Winning</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials-section">
+        <div class="testimonials-header">
+          <h1><span class="span">━━━</span> Testimonials</h1>
+          <p>Check out why our customers loves us in each projects</p>
+        </div>
+        <div class="testimonials-container">
+          <button class="testimonial-nav prev" onclick="prevTestimonial()">
+            <
+          </button>
+          <div class="testimonials-wrapper" id="testimonialsWrapper">
+            <div class="testimonials-slider" id="testimonialsSlider">
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "Excellent construction work! The team delivered our project
+                  on time and exceeded our expectations. Highly recommended for
+                  quality construction services."
+                </p>
+                <div class="testimonial-author">
+                  <h4>John Smith</h4>
+                  <p>Property Owner</p>
+                </div>
+              </div>
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "Professional and reliable team. They transformed our vision
+                  into reality with exceptional attention to detail and
+                  craftsmanship."
+                </p>
+                <div class="testimonial-author">
+                  <h4>Sarah Johnson</h4>
+                  <p>Architect</p>
+                </div>
+              </div>
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "Outstanding service from start to finish. The construction
+                  quality is top-notch and the team is always responsive to our
+                  needs."
+                </p>
+                <div class="testimonial-author">
+                  <h4>Michael Brown</h4>
+                  <p>Contractor</p>
+                </div>
+              </div>
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "Best construction company we've worked with. They understand
+                  the importance of safety and quality in every project."
+                </p>
+                <div class="testimonial-author">
+                  <h4>Emily Davis</h4>
+                  <p>Project Manager</p>
+                </div>
+              </div>
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "Amazing attention to detail and customer service. Our
+                  renovation project was completed with precision and care."
+                </p>
+                <div class="testimonial-author">
+                  <h4>David Wilson</h4>
+                  <p>Homeowner</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="testimonial-nav next" onclick="nextTestimonial()">
+            >
+          </button>
+        </div>
+      </section>
+
+      <div class="clients-partners">
+        <p>Clients & Partners</p>
+        <div class="clients-container">
+          <img src="images/icon/log1.jpg" alt="Client 1" class="client-logo" />
+          <img
+            src="images/icon/logo 2.png"
+            alt="Client 2"
+            class="client-logo"
+          />
+          <img src="images/icon/logo3.jpg" alt="Client 3" class="client-logo" />
+          <img src="images/icon/logo4.jpg" alt="Client 4" class="client-logo" />
+          <img src="images/icon/logo5.png" alt="Client 5" class="client-logo" />
+          <img
+            src="images/icon/PC-Logo-792d3a32.webp"
+            alt="Client 6"
+            class="client-logo"
+          />
+          <img
+            src="images/icon/logo 6.jpg"
+            alt="Client 7"
+            class="client-logo"
+          />
+        </div>
       </div>
 
-      <button class="button-btn" id="contact-toggle">
-        Contact us Today >>
-      </button>
-    </section>
+      <section class="detail" id="detail-section">
+        <div class="detail-heading">
+          <div class="icon-circle" aria-hidden="true">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 10.5L12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10.5z"
+                fill="#fff"
+              />
+            </svg>
+          </div>
+          <h2 class="detail-text">Start a project with us today</h2>
+        </div>
 
-    <script>
-      let slideIndex = 0;
-      const slides = document.querySelectorAll(".slide");
-      const dots = document.querySelectorAll(".dot");
+        <button class="button-btn" id="contact-toggle">
+          Contact us Today >>
+        </button>
+      </section>
 
-      function showSlide(index) {
-        slides.forEach((slide) => slide.classList.remove("active"));
-        dots.forEach((dot) => dot.classList.remove("active"));
-        slides[index].classList.add("active");
-        dots[index].classList.add("active");
-      }
+      <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
 
-      function currentSlide(index) {
-        slideIndex = index;
-        showSlide(slideIndex);
-      }
-
-      function autoSlide() {
-        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-        if (isLoggedIn) {
-          // Logged in: video (2) -> house (1) -> video (2) -> ...
-          if (slideIndex === 2) {
-            slideIndex = 1;
-          } else {
-            slideIndex = 2;
-          }
-        } else {
-          slideIndex = (slideIndex + 1) % 2;
+        function showSlide(index) {
+          slides.forEach((slide) => slide.classList.remove("active"));
+          dots.forEach((dot) => dot.classList.remove("active"));
+          slides[index].classList.add("active");
+          dots[index].classList.add("active");
         }
-        showSlide(slideIndex);
-      }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-        if (isLoggedIn) {
-          slideIndex = 2;
+        function currentSlide(index) {
+          slideIndex = index;
           showSlide(slideIndex);
         }
-      });
 
-      setInterval(autoSlide, 4000);
+        function autoSlide() {
+          const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+          if (isLoggedIn) {
+            // Logged in: video (2) -> house (1) -> video (2) -> ...
+            if (slideIndex === 2) {
+              slideIndex = 1;
+            } else {
+              slideIndex = 2;
+            }
+          } else {
+            slideIndex = (slideIndex + 1) % 2;
+          }
+          showSlide(slideIndex);
+        }
 
-      const scrollDots = document.querySelectorAll(".scroll-dot");
-      const gallery = document.getElementById("mainGallery");
-      const projectItems = document.querySelectorAll(".project-item");
+        document.addEventListener("DOMContentLoaded", () => {
+          const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+          if (isLoggedIn) {
+            slideIndex = 2;
+            showSlide(slideIndex);
+          }
+        });
 
-      function scrollToProject(index) {
-        if (!projectItems || projectItems.length === 0) return;
+        setInterval(autoSlide, 4000);
 
-        const itemWidth = projectItems[0].offsetWidth + 24; // width + gap
-        const scrollPosition = index * itemWidth;
+        const scrollDots = document.querySelectorAll(".scroll-dot");
+        const gallery = document.getElementById("mainGallery");
+        const projectItems = document.querySelectorAll(".project-item");
+
+        function scrollToProject(index) {
+          if (!projectItems || projectItems.length === 0) return;
+
+          const itemWidth = projectItems[0].offsetWidth + 24; // width + gap
+          const scrollPosition = index * itemWidth;
+
+          if (gallery) {
+            gallery.scrollTo({
+              left: scrollPosition,
+              behavior: "smooth",
+            });
+          }
+
+          scrollDots.forEach((dot) => dot.classList.remove("active"));
+          if (scrollDots[index]) {
+            scrollDots[index].classList.add("active");
+          }
+        }
+
+        scrollDots.forEach((dot) => {
+          dot.addEventListener("click", function (e) {
+            e.preventDefault();
+            const activeIndex = Array.from(scrollDots).findIndex((d) =>
+              d.classList.contains("active"),
+            );
+            console.log("Active index:", activeIndex);
+            const nextIndex = (activeIndex + 1) % scrollDots.length;
+            console.log("Next index:", nextIndex);
+            scrollToProject(nextIndex);
+          });
+        });
 
         if (gallery) {
-          gallery.scrollTo({
-            left: scrollPosition,
-            behavior: "smooth",
+          gallery.addEventListener("scroll", function () {
+            const scrollLeft = gallery.scrollLeft;
+            const itemWidth = projectItems[0].offsetWidth + 24;
+            const activeIndex = Math.round(scrollLeft / itemWidth);
+
+            if (activeIndex >= 0 && activeIndex < scrollDots.length) {
+              scrollDots.forEach((dot) => dot.classList.remove("active"));
+              if (scrollDots[activeIndex]) {
+                scrollDots[activeIndex].classList.add("active");
+              }
+            }
           });
         }
 
-        scrollDots.forEach((dot) => dot.classList.remove("active"));
-        if (scrollDots[index]) {
-          scrollDots[index].classList.add("active");
-        }
-      }
-
-      scrollDots.forEach((dot) => {
-        dot.addEventListener("click", function (e) {
-          e.preventDefault();
-          const activeIndex = Array.from(scrollDots).findIndex((d) =>
-            d.classList.contains("active"),
-          );
-          console.log("Active index:", activeIndex);
-          const nextIndex = (activeIndex + 1) % scrollDots.length;
-          console.log("Next index:", nextIndex);
-          scrollToProject(nextIndex);
-        });
-      });
-
-      if (gallery) {
-        gallery.addEventListener("scroll", function () {
-          const scrollLeft = gallery.scrollLeft;
-          const itemWidth = projectItems[0].offsetWidth + 24;
-          const activeIndex = Math.round(scrollLeft / itemWidth);
-
-          if (activeIndex >= 0 && activeIndex < scrollDots.length) {
-            scrollDots.forEach((dot) => dot.classList.remove("active"));
-            if (scrollDots[activeIndex]) {
-              scrollDots[activeIndex].classList.add("active");
+        function animateCounter(element, target, suffix = "", duration = 2000) {
+          let start = 1;
+          const increment = (target - 1) / (duration / 16);
+          const timer = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+              element.textContent = target + suffix;
+              clearInterval(timer);
+            } else {
+              element.textContent = Math.floor(start) + suffix;
             }
-          }
+          }, 16);
+        }
+
+        window.addEventListener("DOMContentLoaded", function () {
+          const statNumbers = document.querySelectorAll(".stat-number");
+          statNumbers.forEach(function (element) {
+            const target = parseInt(element.getAttribute("data-target"));
+            const id = element.parentElement.id;
+            let suffix = "";
+            if (id === "projectsBtn") {
+              suffix = "+";
+            } else if (id === "awardsBtn") {
+              suffix = "k";
+            }
+            animateCounter(element, target, suffix);
+          });
         });
-      }
 
-      function animateCounter(element, target, suffix = "", duration = 2000) {
-        let start = 1;
-        const increment = (target - 1) / (duration / 16);
-        const timer = setInterval(() => {
-          start += increment;
-          if (start >= target) {
-            element.textContent = target + suffix;
-            clearInterval(timer);
-          } else {
-            element.textContent = Math.floor(start) + suffix;
-          }
-        }, 16);
-      }
+        let testimonialIndex = 0;
+        const testimonialsSlider =
+          document.getElementById("testimonialsSlider");
+        const testimonialCards = document.querySelectorAll(".testimonial-card");
 
-      window.addEventListener("DOMContentLoaded", function () {
-        const statNumbers = document.querySelectorAll(".stat-number");
-        statNumbers.forEach(function (element) {
-          const target = parseInt(element.getAttribute("data-target"));
-          const id = element.parentElement.id;
-          let suffix = "";
-          if (id === "projectsBtn") {
-            suffix = "+";
-          } else if (id === "awardsBtn") {
-            suffix = "k";
-          }
-          animateCounter(element, target, suffix);
-        });
-      });
+        function showTestimonial(index) {
+          if (!testimonialsSlider || !testimonialCards.length) return;
+          const cardWidth = testimonialCards[0].offsetWidth + 20;
+          testimonialsSlider.style.transform = `translateX(-${index * cardWidth}px)`;
+        }
 
-      let testimonialIndex = 0;
-      const testimonialsSlider = document.getElementById("testimonialsSlider");
-      const testimonialCards = document.querySelectorAll(".testimonial-card");
+        function nextTestimonial() {
+          if (!testimonialCards.length) return;
+          testimonialIndex = (testimonialIndex + 1) % testimonialCards.length;
+          showTestimonial(testimonialIndex);
+        }
 
-      function showTestimonial(index) {
-        if (!testimonialsSlider || !testimonialCards.length) return;
-        const cardWidth = testimonialCards[0].offsetWidth + 20;
-        testimonialsSlider.style.transform = `translateX(-${index * cardWidth}px)`;
-      }
+        function prevTestimonial() {
+          if (!testimonialCards.length) return;
+          testimonialIndex =
+            (testimonialIndex - 1 + testimonialCards.length) %
+            testimonialCards.length;
+          showTestimonial(testimonialIndex);
+        }
 
-      function nextTestimonial() {
-        if (!testimonialCards.length) return;
-        testimonialIndex = (testimonialIndex + 1) % testimonialCards.length;
-        showTestimonial(testimonialIndex);
-      }
+        const contactToggle = document.getElementById("contact-toggle");
+        if (contactToggle) {
+          contactToggle.addEventListener("click", () => {
+            contactToggle.textContent = "Good choice";
+          });
+        }
 
-      function prevTestimonial() {
-        if (!testimonialCards.length) return;
-        testimonialIndex =
-          (testimonialIndex - 1 + testimonialCards.length) %
-          testimonialCards.length;
-        showTestimonial(testimonialIndex);
-      }
+        const iconCircle = document.querySelector(".icon-circle");
+        if (iconCircle) {
+          iconCircle.style.cursor = "pointer";
+          iconCircle.addEventListener("click", () => {
+            window.location.href = "projects.html";
+          });
+        }
+      </script>
 
-      const contactToggle = document.getElementById("contact-toggle");
-      if (contactToggle) {
-        contactToggle.addEventListener("click", () => {
-          contactToggle.textContent = "Good choice";
-        });
-      }
-
-      const iconCircle = document.querySelector(".icon-circle");
-      if (iconCircle) {
-        iconCircle.style.cursor = "pointer";
-        iconCircle.addEventListener("click", () => {
-          window.location.href = "projects.html";
-        });
-      }
-    </script>
-
-    <section class="company">
-      <div class="detail-discreption">
-        <p class="tittle-12">The Company</p>
-        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
-        <p>
-          The Department of Construction promotes the <br />
-          safety of all people that build, work, and live in <br />
-          New York City by regulating the lawful use of <br />over one million
-          buildings..
-        </p>
-        <div>
-          <img src="images/icon/facebook-logo.png" alt="facebook" />
-          <img src="images/icon/twitter-logo.png" alt="twitter" />
-          <img src="images/icon/youtube-logo.png" alt="youtube" />
-          <img src="images/icon/instagram-logo.png" alt="instagram" />
-        </div>
-      </div>
-      <div class="contact">
-        <p class="tittle-12">Construction Office</p>
-        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
-        <div>
-          <p>121 King Street, NewYork</p>
-          <p>+1(800) 333 44 55</p>
-          <p>newyork@gmail.com</p>
-          <p>+1(800) 333 99 88</p>
-          <p>@construction_live</p>
-        </div>
-      </div>
-      <div class="customer">
-        <p class="tittle-12">🕒 Working Hours</p>
-        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
-        <div class="working-hour">
+      <section class="company">
+        <div class="detail-discreption">
+          <p class="tittle-12">The Company</p>
+          <p><span class="span">━━━</span> ━━━━━━━━━━</p>
           <p>
-            Our support available to help you 24 <br />hours a day, seven days a
-            week.
+            "The Department of Buildings promotes the safety of all people that
+            build, work, and live in winter haven Florida by regulating the
+            lawful use of over one million buildings and construction sites
+            across the five boroughs."
           </p>
-          <p>Monday to Friday 8AM ━ 4PM</p>
-          <p>Saturday 8AM ━ 1PM</p>
-          <p>Sunday Support by Email</p>
+          <div>
+            <img src="images/icon/facebook-logo.png" alt="facebook" />
+            <img src="images/icon/twitter-logo.png" alt="twitter" />
+            <img src="images/icon/youtube-logo.png" alt="youtube" />
+            <img src="images/icon/instagram-logo.png" alt="instagram" />
+          </div>
         </div>
-      </div>
-    </section>
+        <div class="contact">
+          <p class="tittle-12">Construction Office</p>
+          <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+          <div>
+            <p>121 E Kings Way, Winter Park, FL 32789</p>
+            <p>+1(505)709 41 03</p>
+            <p>3Dcontructionlimited@gmail.com</p>
+            <p>+1(949) 264 96 28</p>
+            <p>@3dconstructionlimited_live</p>
+          </div>
+        </div>
+        <div class="customer">
+          <p class="tittle-12">🕒 Working Hours</p>
+          <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+          <div class="working-hour">
+            <p>
+              Our support available to help you 24 <br />hours a day, seven days
+              a week.
+            </p>
+            <p>Monday to Friday 8AM ━ 4PM</p>
+            <p>Saturday 8AM ━ 1PM</p>
+            <p>Sunday Support by Email</p>
+          </div>
+        </div>
+      </section>
 
-    <div class="footer">
-      <footer>© Copyright 2026. All Rights Reserved</footer>
-      <p>Privacy Policy</p>
-    </div>
+      <div class="footer">
+        <footer>
+          &copy; Copyright 2010 &ndash; 2026. All Rights Reserved.
+        </footer>
+        <p><a href="#privacy" class="privacy-link">Privacy Policy</a></p>
+      </div>
+    </main>
   </body>
 </html>

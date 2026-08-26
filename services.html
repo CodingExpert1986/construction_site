@@ -7,44 +7,25 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Single clean reference to your updated script -->
     <script src="script.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-        if (isLoggedIn) {
-          document.body.classList.add("logged-in");
-          const authLinks = document.querySelector(".auth-links");
-          if (authLinks) {
-            authLinks.innerHTML =
-              '<a class="button-btn1" href="#" id="logoutBtn">Logout</a>';
-            document
-              .getElementById("logoutBtn")
-              .addEventListener("click", (e) => {
-                e.preventDefault();
-                localStorage.removeItem("isLoggedIn");
-                localStorage.removeItem("userEmail");
-                document.body.classList.remove("logged-in");
-                window.location.reload();
-              });
-          }
-        }
-      });
-    </script>
+
     <header class="logo">
       <div><img src="images/icon/logo-1-1.png" alt="logo" /></div>
     </header>
 
     <div class="navbar">
       <nav class="nav-links">
-        <a href="home.html">Home</a>
+        <a class="button-btn1" href="home.html">Home</a>
         <a href="company.html">The Company</a>
-        <a class="button-btn1" href="services.html">Services</a>
+        <a href="services.html">Services</a>
         <a href="faq.html">FAQ</a>
         <a href="projects.html">Projects</a>
-        <a href="blog.html"> Blog</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <div class="auth-links">
+
+      <div class="auth-links" id="authLinks">
         <a class="button-btn1" href="login.html">Login</a>
       </div>
     </div>
@@ -61,10 +42,10 @@
           <span class="span">━━━</span> Our <span class="span"> Services</span>
         </h1>
         <p>
-          With over thirty years of experience in residential renovation design
-          and over 16,000 renovation plans delivered to this day.Home owners can
-          have confidence in their choice of a metal roofing Contractor knowing
-          they have met certain requirements.
+          "With over thirty years of experience in heavy infrastructure design
+          and 60 major building and road construction projects completed to
+          date, clients can have absolute confidence in our structural
+          expertise, knowing we meet the highest industry safety standards."
         </p>
 
         <button class="button-btn-1">Request Custom Service</button>
@@ -80,8 +61,8 @@
           <div class="servicees-text">
             <p>Design & <span class="span">Building</span></p>
             <p>
-              Trusted experts delivering modern construction solutions with
-              precision, creativity, and lasting value.
+              "Trusted experts delivering modern construction and engineering
+              solutions with precision, creativity, and lasting value."
             </p>
           </div>
         </div>
@@ -94,8 +75,8 @@
           <div class="servicees-text">
             <p>Condo <span class="span">Remodeling</span></p>
             <p>
-              Thoughtful renovation work that refreshes your condo with clean
-              design, smart planning, and durable finishes.
+              "Thoughtful interior renovations that refresh your condo through
+              clean design, smart space planning, and durable finishes."
             </p>
           </div>
         </div>
@@ -111,8 +92,8 @@
         <div class="servicees-text">
           <p>Projects <span class="span">Management</span></p>
           <p>
-            Coordinated project delivery managing schedules, budgets, and teams
-            to ensure on-time, on-budget completion.
+            "Coordinated project delivery that seamlessly manages schedules,
+            budgets, and teams to ensure on-time, on-budget completion."
           </p>
         </div>
       </div>
@@ -125,8 +106,8 @@
         <div class="servicees-text">
           <p>Hardwood <span class="span">Flooring</span></p>
           <p>
-            Premium hardwood installation and finishing for durable, beautiful
-            floors that stand the test of time.
+            "Premium hardwood installation and dustless finishing for beautiful,
+            durable floors that stand the test of time."
           </p>
         </div>
       </div>
@@ -139,8 +120,8 @@
         <div class="servicees-text">
           <p>Tiling & <span class="span">Painting</span></p>
           <p>
-            Expert tile and paint finishes that transform surfaces with clean
-            lines and lasting visual appeal.
+            "Expert tile setting and flawless paint finishes that transform
+            surfaces with clean lines and lasting visual appeal."
           </p>
         </div>
       </div>
@@ -204,12 +185,11 @@
         <p class="tittle-12">The Company</p>
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <p>
-          The Department of Construction promotes the <br />
-          safety of all people that build, work, and live in <br />
-          New York City by regulating the lawful use of <br />over one million
-          buildings..
+          "The Department of Buildings promotes the safety of all people that
+          build, work, and live in winter haven Florida by regulating the lawful
+          use of over one million buildings and construction sites across the
+          five boroughs."
         </p>
-
         <img src="images/icon/facebook-logo.png" alt="facebook" />
         <img src="images/icon/twitter-logo.png" alt="twitter" />
         <img src="images/icon/youtube-logo.png" alt="youtube" />
@@ -219,11 +199,11 @@
         <p class="tittle-12">Construction Office</p>
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <div>
-          <p>121 King Street, NewYork</p>
-          <p>+1(800) 333 44 55</p>
-          <p>newyork@gmail.com</p>
-          <p>+1(800) 333 99 88</p>
-          <p>@construction_live</p>
+          <p>121 E Kings Way, Winter Park, FL 32789</p>
+          <p>+1(505)709 41 03</p>
+          <p>3Dcontructionlimited@gmail.com</p>
+          <p>+1(949) 264 96 28</p>
+          <p>@3dconstructionlimited_live</p>
         </div>
       </div>
       <div class="customer">
@@ -244,8 +224,8 @@
     <div class="alert-message" id="alertMessage">Good choice!</div>
 
     <div class="footer">
-      <footer>Â© Copyright 2026. All Rights Reserved</footer>
-      <p>Privacy Policy</p>
+      <footer>&copy; Copyright 2010 &ndash; 2026. All Rights Reserved.</footer>
+      <p><a href="#privacy" class="privacy-link">Privacy Policy</a></p>
     </div>
 
     <script>

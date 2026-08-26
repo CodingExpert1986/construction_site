@@ -8,44 +8,23 @@
   </head>
   <body>
     <script src="script.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-        if (isLoggedIn) {
-          document.body.classList.add("logged-in");
-          const authLinks = document.querySelector(".auth-links");
-          if (authLinks) {
-            authLinks.innerHTML =
-              '<a class="button-btn1" href="#" id="logoutBtn">Logout</a>';
-            document
-              .getElementById("logoutBtn")
-              .addEventListener("click", (e) => {
-                e.preventDefault();
-                localStorage.removeItem("isLoggedIn");
-                localStorage.removeItem("userEmail");
-                document.body.classList.remove("logged-in");
-                window.location.reload();
-              });
-          }
-        }
-      });
-    </script>
+
     <header class="logo">
       <div><img src="images/icon/logo-1-1.png" alt="logo" /></div>
     </header>
 
     <div class="navbar">
       <nav class="nav-links">
-        <a href="home.html">Home</a>
-        <a class="button-btn1" href="company.html">The Company</a>
+        <a class="button-btn1" href="home.html">Home</a>
+        <a href="company.html">The Company</a>
         <a href="services.html">Services</a>
         <a href="faq.html">FAQ</a>
         <a href="projects.html">Projects</a>
-        <a href="blog.html"> Blog</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
       </nav>
 
-      <div class="auth-links">
+      <div class="auth-links" id="authLinks">
         <a class="button-btn1" href="login.html">Login</a>
       </div>
     </div>
@@ -63,10 +42,13 @@
           </h2>
           <div>
             We are a full-service construction firm dedicated to high-quality
-            craftsmanship <br />and reliable project management. For years, we
-            have turned complex blueprints <br />into durable realities. Our
-            team prioritizes safety, budget adherence, and sustainable
-            <br />building practices. We handle every detail so you can focus on
+            craftsmanship <br />
+            and reliable project management. For over three decades, we have
+            turned complex <br />
+            civil engineering blueprints into durable realities. Our veteran
+            team prioritizes strict <br />
+            site safety, budget adherence, and sustainable building
+            practices—handling every detail <br />seamlessly so you can focus on
             your future space.
           </div>
         </div>
@@ -113,18 +95,18 @@
             Behind every groundbreaking project is a team of dedicated experts
             who transform blueprints into reality. Our site engineers combine
             technical precision, safety leadership, and creative problem-solving
-            to deliver structural excellence on every acre we touch. From the
-            first shovel in the ground to the final safety inspection, they
-            ensure your vision is built to last
+            to deliver structural excellence on every project we undertake. From
+            the first shovel in the ground to the final safety inspection, they
+            ensure your vision is built to last.
           </p>
         </div>
       </div>
       <div class="team-row">
         <div class="team-member">
-          <img src="images/icon/eng1-182x300.jpg" alt="Construction Manager" />
+          <img src="images/icon/work111.jpeg" alt="Ceo" />
           <div class="info">
-            <h2>John <span class="span">Carter</span></h2>
-            <p>Construction Manager</p>
+            <h2>Dennis<span class="span">Brown</span></h2>
+            <p>Founder & Managing Director</p>
           </div>
         </div>
 
@@ -139,7 +121,7 @@
         <div class="team-member">
           <img src="images/icon/eng3-182x300.jpg" alt="Senior Architect" />
           <div class="info">
-            <h2>Jack <span class="span">Brown</span></h2>
+            <h2>Jack <span class="span">Carter</span></h2>
             <p>Senior Architect</p>
           </div>
         </div>
@@ -207,7 +189,6 @@
       </div>
     </section>
 
-    <!-- ORANGE DETAIL SECTION - NOW AT THE TOP -->
     <div class="detail" id="detail-section">
       <div class="detail-heading">
         <div class="icon-circle" aria-hidden="true">
@@ -238,10 +219,10 @@
         <p class="title-12">The Company</p>
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <p>
-          The Department of Construction promotes the <br />
-          safety of all people that build, work, and live in <br />
-          New York City by regulating the lawful use of <br />over one million
-          buildings..
+          "The Department of Buildings promotes the safety of all people that
+          build, work, and live in winter haven Florida by regulating the lawful
+          use of over one million buildings and construction sites across the
+          five boroughs."
         </p>
 
         <img src="images/icon/facebook-logo.png" alt="facebook" />
@@ -253,11 +234,11 @@
         <p class="title-12">Construction Office</p>
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <div>
-          <p>121 King Street, NewYork</p>
-          <p>+1(800) 333 44 55</p>
-          <p>newyork@gmail.com</p>
-          <p>+1(800) 333 99 88</p>
-          <p>@construction_live</p>
+          <p>121 E Kings Way, Winter Park, FL 32789</p>
+          <p>+1(505)709 41 03</p>
+          <p>3Dcontructionlimited@gmail.com</p>
+          <p>+1(949) 264 96 28</p>
+          <p>@3dconstructionlimited_live</p>
         </div>
       </div>
       <div class="customer">
@@ -276,7 +257,7 @@
     </section>
 
     <div class="footer">
-      <footer>© Copyright 2026. All Rights Reserved</footer>
+      <footer>© Copyright 2010. All Rights Reserved</footer>
       <p>Privacy Policy</p>
     </div>
     <script>
