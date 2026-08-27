@@ -1,1 +1,0 @@
-Fix mobile layout: remove left-offset overflow on Company page (.company-section/.company-content)
