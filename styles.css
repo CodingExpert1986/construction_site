@@ -95,10 +95,32 @@
 }
 
 .auth-wrapper {
-  min-height: calc(100vh - 72px);
+  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
   padding: 24px;
+}
+
+/* Auth page header (logo / back-to-home) - consistent on desktop & mobile */
+.site-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.login,
+.brand {
+  display: inline-block;
+  line-height: 0;
+}
+
+.login img,
+.brand img {
+  display: block;
+  height: 44px;
+  width: auto;
 }
 
 .auth-card {
@@ -201,8 +223,12 @@ select:focus {
 
 @media (max-width: 480px) {
   .auth-card {
+    max-width: 100%;
     padding: 20px;
     border-radius: 10px;
+  }
+  .auth-form .btn {
+    width: 100%;
   }
   .grid.two-col {
     grid-template-columns: 1fr;
