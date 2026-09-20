@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Single clean reference to your updated script -->
     <script src="script.js"></script>
 
     <header class="logo">
       <div><img src="images/icon/logo-1-1.png" alt="logo" /></div>
     </header>
 
-        <div class="navbar">
-      <button class="hamburger" id="hamburgerMenu" aria-label="Toggle navigation menu" aria-expanded="false">
+    <div class="navbar">
+      <button
+        class="hamburger"
+        id="hamburgerMenu"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
@@ -47,10 +51,7 @@
           <span class="span">━━━</span> Our <span class="span"> Services</span>
         </h1>
         <p>
-          "With over thirty years of experience in heavy infrastructure design
-          and 60 major building and road construction projects completed to
-          date, clients can have absolute confidence in our structural
-          expertise, knowing we meet the highest industry safety standards."
+          "Our construction management services specialize in delivering secure, compliant, and durable infrastructure solutions. From robust structural designs to major roadway developments, we focus on precision engineering and strict quality control to guarantee that every project meets the highest industry safety benchmarks.."
         </p>
 
         <button class="button-btn-1">Request Custom Service</button>
@@ -175,7 +176,6 @@
         contactToggle.textContent = "Good choice";
       });
 
-      // Make icon-circle navigate to projects page
       const iconCircle = document.querySelector(".icon-circle");
       if (iconCircle) {
         iconCircle.style.cursor = "pointer";
@@ -185,64 +185,57 @@
       }
     </script>
 
-    <section class="company">
-      <div class="detail-discreption">
-        <p class="tittle-12">The Company</p>
-        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
-        <p>
-          "The Department of Buildings promotes the safety of all people that
-          build, work, and live in winter haven Florida by regulating the lawful
-          use of over one million buildings and construction sites across the
-          five boroughs."
-        </p>
-        <img src="images/icon/facebook-logo.png" alt="facebook" />
-        <img src="images/icon/twitter-logo.png" alt="twitter" />
-        <img src="images/icon/youtube-logo.png" alt="youtube" />
-        <img src="images/icon/instagram-logo.png" alt="instagram" />
-      </div>
-      <div class="contact">
-        <p class="tittle-12">Construction Office</p>
-        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
-        <div>
-          <p>121 E Kings Way, Winter Park, FL 32789</p>
-          <p>+1(505)709 41 03</p>
-          <p>3Dcontructionlimited@gmail.com</p>
-          <p>+1(949) 264 96 28</p>
-          <p>@3dconstructionlimited_live</p>
-        </div>
-      </div>
-      <div class="customer">
-        <p class="tittle-12">🕒 Working Hours</p>
-        <p><span class="span">━━━</span> ━━━━━━━━━━</p>
-        <div class="working-hour">
+   <section class="company">
+        <div class="detail-discreption">
+          <p class="tittle-12">The Company</p>
+          <p><span class="span">━━━</span> ━━━━━━━━━━</p>
           <p>
-            Our support available to help you 24 <br />hours a day, seven days a
-            week.
+            "The Department of Buildings ensures the safety of everyone who
+            builds, works, and lives within the community. By regulating
+            construction standards and overseeing building compliance, the
+            department fosters sustainable development and structural integrity
+            across the city."
           </p>
-          <p>Monday to Friday 8AM ━ 4PM</p>
-          <p>Saturday 8AM ━ 1PM</p>
-          <p>Sunday Support by Email</p>
+          <div>
+            <img src="images/icon/facebook-logo.png" alt="facebook" />
+            <img src="images/icon/twitter-logo.png" alt="twitter" />
+            <img src="images/icon/youtube-logo.png" alt="youtube" />
+            <img src="images/icon/instagram-logo.png" alt="instagram" />
+          </div>
         </div>
+        <div class="contact">
+          <p class="tittle-12">Construction Office</p>
+          <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+          <div>
+            <p>121 constructon avenue</p>
+          <p>+1234355</p>
+          <p>codingexpert1986@gmail.com</p>
+          <p>+123445</p>
+          <p>codingexpert1986@gmail.com</p>
+        </div>
+          </div>
+        </div>
+        <div class="customer">
+          <p class="tittle-12">🕒 Working Hours</p>
+          <p><span class="span">━━━</span> ━━━━━━━━━━</p>
+          <div class="working-hour">
+            <p>
+              Our support available to help you 24 <br />hours a day, seven days
+              a week.
+            </p>
+            <p>Monday to Friday 8AM ━ 4PM</p>
+            <p>Saturday 8AM ━ 1PM</p>
+            <p>Sunday Support by Email</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer">
+        <footer>
+          &copy; Copyright 2010 &ndash; 2026. All Rights Reserved.
+        </footer>
+        <p><a href="#privacy" class="privacy-link">Privacy Policy</a></p>
       </div>
-    </section>
-
-    <div class="alert-message" id="alertMessage">Good choice!</div>
-
-    <div class="footer">
-      <footer>&copy; Copyright 2010 &ndash; 2026. All Rights Reserved.</footer>
-      <p><a href="#privacy" class="privacy-link">Privacy Policy</a></p>
-    </div>
-
-    <script>
-      function showGoodChoice() {
-        const alert = document.getElementById("alertMessage");
-        if (alert) {
-          alert.classList.add("show");
-          setTimeout(() => {
-            alert.classList.remove("show");
-          }, 2000);
-        }
-      }
-    </script>
+    </main>
   </body>
 </html>

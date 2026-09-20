@@ -13,8 +13,13 @@
       <div><img src="images/icon/logo-1-1.png" alt="logo" /></div>
     </header>
 
-        <div class="navbar">
-      <button class="hamburger" id="hamburgerMenu" aria-label="Toggle navigation menu" aria-expanded="false">
+    <div class="navbar">
+      <button
+        class="hamburger"
+        id="hamburgerMenu"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
@@ -173,10 +178,11 @@
         <p class="tittle-12">The Company</p>
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <p>
-          "The Department of Buildings promotes the safety of all people that
-          build, work, and live in winter haven Florida by regulating the lawful
-          use of over one million buildings and construction sites across the
-          five boroughs."
+          "The Department of Buildings ensures the safety of everyone who
+          builds, works, and lives within the community. By regulating
+          construction standards and overseeing building compliance, the
+          department fosters sustainable development and structural integrity
+          across the city."
         </p>
 
         <img src="images/icon/facebook-logo.png" alt="facebook" />
@@ -187,13 +193,13 @@
       <div class="contact">
         <p class="tittle-12">Construction Office</p>
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
-        <dl>
-          <p>121 E Kings Way, Winter Park, FL 32789</p>
-          <p>+1(505)709 41 03</p>
-          <p>3Dcontructionlimited@gmail.com</p>
-          <p>+1(949) 264 96 28</p>
-          <p>@3dconstructionlimited_live</p>
-        </dl>
+        <div>
+          <p>121 constructon avenue</p>
+          <p>+1234355</p>
+          <p>codingexpert1986@gmail.com</p>
+          <p>+123445</p>
+          <p>codingexpert1986@gmail.com</p>
+        </div>
       </div>
 
       <div class="customer">
@@ -379,7 +385,6 @@
         propertyDetails.style.display = "block";
         backBtn.style.display = "block";
 
-        // Update property details
         const property = propertyData[propertyId];
         document.getElementById("propertyName").textContent = property.name;
         document.getElementById("propertyDescription").textContent =
@@ -388,7 +393,6 @@
           .getElementById("propertyCost")
           .querySelector(".cost-amount").textContent = property.cost;
 
-        // Update features list
         const featuresList = document.getElementById("featuresList");
         featuresList.innerHTML = "";
         property.features.forEach((feature) => {
@@ -397,7 +401,6 @@
           featuresList.appendChild(li);
         });
 
-        // Update gallery
         galleryPanel.innerHTML = "";
         propertyImages[propertyId].forEach((item) => {
           const div = document.createElement("div");
@@ -418,7 +421,6 @@
         backBtn.style.display = "none";
       }
 
-      // Auto-show property from URL parameter on page load
       document.addEventListener("DOMContentLoaded", function () {
         const propertyId = getUrlParameter("property");
         if (propertyId && propertyData[propertyId]) {
@@ -428,7 +430,6 @@
     </script>
 
     <script>
-      // Contact button functionality
       const contactToggle = document.getElementById("contact-toggle");
       if (contactToggle) {
         contactToggle.addEventListener("click", () => {

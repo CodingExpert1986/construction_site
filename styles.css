@@ -32,7 +32,7 @@
   border-radius: 30px;
   width: 80%;
   margin: 0 auto;
-    position: sticky;
+  position: sticky;
   top: 0;
   z-index: 9999;
 }
@@ -2108,7 +2108,6 @@ select {
   }
 }
 
-/* Stats section styling */
 .stats-section {
   display: flex;
   justify-content: center;
@@ -2216,7 +2215,6 @@ select {
   margin-top: 10px;
 }
 
-/* Clients & Partners section styling */
 .clients-partners {
   text-align: center;
   padding: 40px 20px;
@@ -2257,7 +2255,6 @@ select {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Start a new project section */
 .start-project {
   display: flex;
   align-items: center;
@@ -2288,7 +2285,6 @@ select {
   color: #fcbf49;
 }
 
-/* Alert message styling */
 .alert-message {
   position: fixed;
   top: 20px;
@@ -2318,9 +2314,8 @@ select {
   }
 }
 
-/* Mobile Responsive Styles */
 @media (max-width: 768px) {
-    .hamburger {
+  .hamburger {
     display: flex;
   }
 
@@ -2408,7 +2403,7 @@ select {
     width: 60%;
   }
 
-    .contact-container {
+  .contact-container {
     width: 100%;
   }
 
@@ -2448,6 +2443,8 @@ select {
   .slide .title,
   .slide .title-1 {
     max-width: 90%;
+    margin-left: 0;
+    margin-right: 0;
     padding: 16px 20px;
   }
 
@@ -2549,7 +2546,7 @@ select {
 }
 
 @media (max-width: 480px) {
-    .navbar {
+  .navbar {
     width: 100%;
     border-radius: 0;
     padding: 8px 10px;
@@ -2649,7 +2646,7 @@ select {
     width: 100%;
   }
 
-    .contact-description {
+  .contact-description {
     width: 100%;
   }
 
