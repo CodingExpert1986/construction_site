@@ -1,0 +1,600 @@
+/* ───────────────────────────────────────────────────
+   mobile.css — All @media queries consolidated in one file.
+   
+   When a layout breaks on mobile OR desktop, open THIS file
+   and scroll to the relevant breakpoint. Every responsive
+   rule lives here — none are scattered in styles.css.
+   
+   Breakpoint legend (top → bottom):
+     980px  ─ tablet / small desktop
+     900px  ─ tablet landscape
+     768px  ─ tablet portrait
+     768px  ─ desktop-only (min-width)
+     720px  ─ tablet
+     680px  ─ large phone landscape
+     600px  ─ large phone portrait
+     480px  ─ phone
+   ─────────────────────────────────────────────────── */
+
+/* ====================================================
+   980px — Tablet / small desktop
+   ==================================================== */
+
+/* Contact page: stack the grid */
+@media (max-width: 980px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  .map-wrap {
+    min-height: 720px;
+  }
+}
+
+/* Blog gallery: 3 columns → 2 columns */
+@media (max-width: 980px) {
+  .blog-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ====================================================
+   900px
+   ==================================================== */
+@media (max-width: 900px) {
+  .company {
+    margin: 0 16px;
+  }
+}
+
+/* ====================================================
+   768px — Tablet portrait
+   (original order preserved for correct cascade)
+   ==================================================== */
+
+/* Company section & who-we-are */
+@media (max-width: 768px) {
+  .company-section {
+    margin: 20px 0 0 0;
+    padding: 20px;
+    background-image: none;
+  }
+  .company-content {
+    margin-left: 0;
+    gap: 20px;
+  }
+  .who-we-are-text {
+    width: 100%;
+  }
+  .who-we-are-text br {
+    display: none;
+  }
+  .who-we-are-text > div {
+    text-align: left;
+  }
+  .who-we-are-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .who-we-are-container .img,
+  .who-we-are-container .who-we-are-text {
+    flex: none;
+    width: 100%;
+  }
+  .who-we-are-container .who-we-are-text {
+    text-align: center;
+  }
+  .services {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    padding: 20px;
+  }
+}
+
+/* Team section: stack image and content */
+@media (max-width: 768px) {
+  .team-section {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+  .team-section img {
+    width: 100%;
+  }
+  .team-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FAQ: stack left and description */
+@media (max-width: 768px) {
+  .Faq-containter {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+  }
+  .faq-left,
+  .faq-description {
+    width: 100%;
+  }
+  .faq-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Detail bar: stack horizontally → vertically */
+@media (max-width: 768px) {
+  .detail {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    width: calc(100% - 24px);
+    margin-inline: 12px;
+    border-radius: 8px;
+  }
+}
+
+/* Contact image-text: stack */
+@media (max-width: 768px) {
+  .contact-image-text {
+    flex-direction: column;
+  }
+  .contact-image-text img {
+    width: 100%;
+  }
+  .contact-left {
+    width: 100%;
+  }
+  .contact-description {
+    width: 100%;
+  }
+}
+
+/* Blog content: tighten padding & font sizes */
+@media (max-width: 768px) {
+  .blog-content {
+    padding: 15px;
+  }
+  .blog-intro h1 {
+    font-size: 1.6rem;
+  }
+  .blog-content h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Projects page: tighter padding */
+@media (max-width: 768px) {
+  .projects-page {
+    padding: 20px 15px;
+  }
+  .project-image {
+    height: 200px;
+  }
+  .project-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Property detail: gallery stacks to 1 column */
+@media (max-width: 768px) {
+  .gallery-panel {
+    grid-template-columns: 1fr;
+  }
+  .features-panel {
+    padding: 20px;
+  }
+}
+
+/* Home projects scroll: smaller cards */
+@media (max-width: 768px) {
+  .home-containter .projects-gallery {
+    gap: 16px;
+    padding: 10px;
+  }
+  .home-containter .project-item {
+    width: 260px;
+    height: 220px;
+  }
+  .home-containter .project-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* ====================================================
+   768px — Full mobile navigation & layout overhaul
+   ==================================================== */
+@media (max-width: 768px) {
+  /* Show hamburger, hide desktop nav links */
+  .hamburger {
+    display: flex;
+  }
+  .company-section,
+  .company-content {
+    margin: 0 !important;
+    padding: 0 16px;
+  }
+  /* Navbar becomes a hamburger menu */
+  .navbar {
+    position: relative;
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links,
+  .auth-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #0b0909;
+  }
+  .navbar.nav-open .nav-links,
+  .navbar.nav-open .auth-links {
+    display: flex;
+  }
+  .nav-links a {
+    padding: 14px 20px;
+    font-size: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: none;
+    color: #fff;
+  }
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+  .nav-links a.button-btn1 {
+    background-color: transparent;
+    color: #fff;
+    border-radius: 0;
+  }
+  .auth-links a {
+    display: block;
+    text-align: left;
+    padding: 14px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: none;
+    color: #fff;
+  }
+  .auth-links a.button-btn1 {
+    background-color: transparent;
+    color: #fff;
+    border-radius: 0;
+  }
+  /* Hamburger → X animation */
+  .navbar.nav-open .hamburger-bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .navbar.nav-open .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar.nav-open .hamburger-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+  /* Logo */
+  .logo {
+    margin: 0;
+  }
+  .logo img {
+    width: 60%;
+  }
+  .contact-container {
+    width: 100%;
+  }
+  /* Slider */
+  .slider-container {
+    height: 100%;
+  }
+  .slide {
+    height: 100%;
+  }
+  /* Services grid */
+  .services {
+    margin-left: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* ---- Service cards: stack vertically & drop caption UNDER the image ----
+     Fixes the 320–390px overlap. On desktop the caption stays absolutely
+     positioned (styles.css); here it goes back into normal flow so it can
+     never overlap the next card or the footer. */
+  .Servicess,
+  .service12 {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    margin: 24px;
+    padding: 24px;
+  }
+  .services-content {
+    flex: none;
+    width: 100%;
+    max-width: 640px;
+  }
+  .service-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 24px;
+    width: 100%;
+    padding-bottom: 0; /* no floating-caption overhang to reserve for */
+  }
+  .service-cards .service-card,
+  .service12 .service-card {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0; /* overhang space no longer needed */
+  }
+  .service-card .image1 {
+    width: 100%;
+    height: auto; /* keep aspect ratio instead of the fixed 280x200 */
+  }
+  /* THE KEY CHANGE: caption flows beneath the image */
+  .servicees-text {
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    min-height: 0;
+    max-height: none; /* show full text, no clipping */
+    overflow: visible;
+    margin-top: 12px;
+  }
+  /* Don't let the hover-lift re-create overlap on tap */
+  .service-card:hover {
+    transform: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Hero container height reduced on mobile */
+  .container {
+    height: 50vh;
+  }
+  .slide .title,
+  .slide .title-1 {
+    max-width: 90%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 16px 20px;
+  }
+  .title h1 {
+    font-size: 1.5rem;
+  }
+  .title-1 p {
+    font-size: 1.2rem;
+  }
+  .title-1 h3 {
+    font-size: 1.3rem;
+  }
+  .subtitle {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  .description {
+    grid-template-columns: 1fr;
+  }
+  .img {
+    width: 100%;
+  }
+  .services {
+    grid-template-columns: 1fr;
+    margin-left: 10px;
+    padding: 15px;
+  }
+  /* Team */
+  .team {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+  .team-content {
+    width: 100%;
+  }
+  .team-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Core */
+  .core {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+  /* Detail bar */
+  .detail {
+    flex-direction: column;
+    padding: 20px 15px;
+    text-align: center;
+  }
+  .detail-text {
+    font-size: 1.2rem;
+    padding: 20px;
+  }
+  /* Stats */
+  .stats-section {
+    padding: 20px;
+  }
+  .stats-section .stat-button {
+    width: 120px;
+    padding: 12px 8px;
+  }
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  /* Testimonials */
+  .testimonials-section {
+    padding: 30px 15px;
+  }
+  .testimonial-card {
+    flex: 0 0 100%;
+  }
+  /* Clients */
+  .clients-container {
+    gap: 10px;
+  }
+  .client-logo {
+    width: 60px;
+    height: 60px;
+  }
+  /* Company footer section */
+  .company {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ====================================================
+   768px min-width — Desktop only
+   ==================================================== */
+@media (min-width: 768px) {
+  .detail-view {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ====================================================
+   720px
+   ==================================================== */
+@media (max-width: 720px) {
+  .company {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+}
+
+/* ====================================================
+   680px — Large phone landscape
+   ==================================================== */
+@media (max-width: 680px) {
+  .blog-gallery {
+    grid-template-columns: 1fr;
+  }
+  .blog-intro {
+    padding: 24px;
+  }
+}
+
+/* ====================================================
+   600px — Large phone portrait
+   ==================================================== */
+@media (max-width: 600px) {
+  .form {
+    width: 90%;
+    margin: 16px auto;
+  }
+}
+
+/* ====================================================
+   480px — Phone
+   ==================================================== */
+
+/* Auth card: full width on small screens */
+@media (max-width: 480px) {
+  .auth-card {
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .auth-form .btn {
+    width: 100%;
+  }
+  .grid.two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Navbar, slider height, team, services, contact, FAQ, forms */
+@media (max-width: 480px) {
+  .navbar {
+    width: 100%;
+    border-radius: 0;
+    padding: 8px 10px;
+  }
+  .hamburger {
+    width: 32px;
+    height: 24px;
+  }
+  .hamburger-bar {
+    width: 22px;
+    height: 2px;
+  }
+  .nav-links a {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+  .auth-links a {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+  .container {
+    height: 40vh;
+  }
+  .title h1 {
+    font-size: 1.2rem;
+  }
+  .title-1 p {
+    font-size: clamp(0.9rem, 4.2vw, 1.2rem);
+  }
+  .title-1 h3 {
+    font-size: clamp(0.75rem, 3.7vw, 0.95rem);
+  }
+  .team-section {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+  .team-section img {
+    width: 100%;
+  }
+  .team-features {
+    grid-template-columns: 1fr;
+  }
+  .team-readmore {
+    margin-left: 0;
+  }
+  .detail-text {
+    font-size: 1rem;
+  }
+  .button-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  .testimonials-container {
+    flex-direction: column;
+  }
+  .testimonial-nav {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+  .Faq-containter {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+  .faq-left,
+  .faq-description {
+    width: 100%;
+  }
+  .form {
+    padding: 20px;
+  }
+  .contact-image-text {
+    flex-direction: column;
+  }
+  .contact-left {
+    width: 100%;
+  }
+  .contact-description {
+    width: 100%;
+  }
+  .services {
+    grid-template-columns: 1fr;
+  }
+  .team-row {
+    grid-template-columns: 1fr;
+  }
+}

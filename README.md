@@ -7,9 +7,9 @@ A modern, responsive website for a construction company showcasing services, pro
 This project is a multi-page static website for a construction company, featuring:
 
 - Responsive design for all device sizes
-- Interactive image sliders and testimonials
-- User authentication (login/register)
-- Project gallery with filtering
+- Interactive image sliders
+- Demo login/register flow using localStorage (not production authentication)
+- Project gallery with interactive project details
 - Contact and FAQ forms
 
 ## Project Structure
@@ -25,7 +25,8 @@ Construction/
 ├── login.html       # User login page
 ├── register.html    # User registration page
 ├── faq.html         # Frequently asked questions
-├── styles.css       # Main stylesheet
+├── styles.css       # Main stylesheet (no media queries)
+├── mobile.css       # All @media queries consolidated here
 ├── script.js        # JavaScript functionality
 ├── images/          # Image assets
 │   └── icon/        # Icons and logos
@@ -51,7 +52,7 @@ Construction/
 - Project gallery with smooth scrolling
 - Animated statistics counters
 - Testimonial carousel
-- User authentication with localStorage
+- Demo sign-in state stored in localStorage only
 - Responsive navigation with sticky header
 
 ## Technologies Used
@@ -59,6 +60,10 @@ Construction/
 - **HTML5** - Semantic markup
 - **CSS3** - Modern styling with flexbox and grid
 - **JavaScript** - Interactive functionality and form handling
+
+This is a frontend-only portfolio demo. Login state is stored in the current
+browser, and contact/FAQ form submissions are not sent to a server. No backend
+or real authentication is included.
 
 ## Getting Started
 
@@ -78,7 +83,7 @@ Construction/
 
 - Click "Login" to access the login page
 - New users can register via the registration page
-- Authentication state is stored in localStorage
+- Demo sign-in state is stored in localStorage in the current browser only
 
 ## Browser Support
 
@@ -90,10 +95,9 @@ The website is designed to work on modern browsers with responsive support for:
 
 ## Contact
 
-For more information about the construction services, visit the Contact page or reach out to:
-
-- **Address:** 121 King Street, New York
-- **Phone:** +1(800) 333 44 55
+The Contact page uses sample company information for demonstration. Its
+embedded map links that sample location and should be updated alongside the
+phone and address if the project is adapted for a real business.
 
 ## License
 

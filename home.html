@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project</title>
+    <title>Stonewise Construction | Home</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile.css" />
   </head>
   <body>
     <script src="script.js"></script>
@@ -50,8 +51,10 @@
           </div>
           <div class="slide" id="slide1">
             <div class="title-1">
-              <p>BULIDING THE FUTURE</p>
-              <h3 class="subtitle-text">Qaulity Construction. Bulit to last</h3>
+              <p>“BUILDING THE FUTURE”</p>
+              <h3 class="subtitle-text">
+                “Quality Construction. Built to Last”
+              </h3>
             </div>
           </div>
           <div class="slide" id="slide2">
@@ -72,43 +75,44 @@
         <div class="content">
           <div class="service-intro">
             <h1>
-              <span class="span">━━━ </span>Building it better in
+              <span class="span"> </span>Building it better in
               <span class="span">Concrete</span>
             </h1>
-            <p>The Department of Building promotes the safety build</p>
+            <p>
+              We are committed to delivering safe, reliable, and quality
+              construction solutions built to last.
+            </p>
           </div>
 
           <div class="description">
             <div>
-              <h1>Design & Building</h1>
+              <h2>Design & Building</h2>
               <p>
-                Service currently available at the <br />
-                Department's Development HUB have <br />
-                been enhanced
+                Our design and building services combine practical planning,
+                quality craftsmanship, and reliable construction solutions.
               </p>
             </div>
             <div>
-              <h1>Safe Construction</h1>
+              <h2>Safe Construction</h2>
               <p>
-                Applicants and Owners can review plans <br />
-                and objections alongside their plan <br />
-                examiner virtually
+                We prioritize safety at every stage of construction, from
+                careful planning and site preparation to quality execution and
+                project completion.
               </p>
             </div>
             <div>
-              <h1>Remodeling</h1>
+              <h2>Remodeling</h2>
               <p>
-                The virtual review software eliminates <br />
-                the need for developers to visit a <br />
-                borough office
+                Our remodeling services focus on improving spaces with
+                thoughtful design, quality materials, and careful attention to
+                detail.
               </p>
             </div>
             <div>
-              <h1>Tiling & Painting</h1>
+              <h2>Tiling & Painting</h2>
               <p>
-                Will allow the applicant to <br />
-                access reviewer comments and <br />
-                objections online
+                We provide quality tiling and painting services that give every
+                space a clean, durable, and professional finish.
               </p>
             </div>
           </div>
@@ -120,10 +124,15 @@
       <section class="home-containter">
         <div class="projects-header">
           <h2><span class="span"></span>Latest Projects</h2>
-          <p>Check out our latest construction projects around the world</p>
+          <p>Explore some of our construction and development projects.</p>
         </div>
 
-        <div class="projects-scroll-container">
+        <div
+          class="projects-scroll-container"
+          id="projectsScroller"
+          tabindex="0"
+          aria-label="Featured construction projects"
+        >
           <div class="projects-gallery" id="mainGallery">
             <a href="projects.html?property=property1" class="project-item">
               <img
@@ -132,7 +141,7 @@
                 class="project-image"
               />
               <div class="project-overlay">
-                <h2 class="project-title">Luxury Villa</h2>
+                <h2 class="project-title">Residential Villa</h2>
               </div>
             </a>
 
@@ -143,7 +152,7 @@
                 class="project-image"
               />
               <div class="project-overlay">
-                <h2 class="project-title">Luxury Neighborhood</h2>
+                <h2 class="project-title">Residential Development</h2>
               </div>
             </a>
 
@@ -154,7 +163,7 @@
                 class="project-image"
               />
               <div class="project-overlay">
-                <h2 class="project-title">Modern Estate</h2>
+                <h2 class="project-title">Modern Building Project</h2>
               </div>
             </a>
 
@@ -165,7 +174,7 @@
                 class="project-image"
               />
               <div class="project-overlay">
-                <h2 class="project-title">Contemporary Home</h2>
+                <h2 class="project-title">Contemporary Construction</h2>
               </div>
             </a>
 
@@ -176,7 +185,7 @@
                 class="project-image"
               />
               <div class="project-overlay">
-                <h2 class="project-title">Garden Villa</h2>
+                <h2 class="project-title">Residential Construction</h2>
               </div>
             </a>
 
@@ -187,54 +196,29 @@
                 class="project-image"
               />
               <div class="project-overlay">
-                <h2 class="project-title">Urban Retreat</h2>
+                <h2 class="project-title">Urban Development</h2>
               </div>
             </a>
           </div>
         </div>
-        <div class="scroll-dots">
-          <span
-            class="scroll-dot active"
-            data-slide="0"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 1"
-          ></span>
-          <span
-            class="scroll-dot"
-            data-slide="1"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 2"
-          ></span>
-          <span
-            class="scroll-dot"
-            data-slide="2"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 3"
-          ></span>
-          <span
-            class="scroll-dot"
-            data-slide="3"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 4"
-          ></span>
-          <span
-            class="scroll-dot"
-            data-slide="4"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 5"
-          ></span>
-          <span
-            class="scroll-dot"
-            data-slide="5"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 6"
-          ></span>
+        <div class="gallery-controls" aria-label="Project gallery controls">
+          <button
+            type="button"
+            class="gallery-arrow"
+            id="projectsPrevious"
+            aria-label="Previous projects"
+            disabled
+          >
+            &larr;
+          </button>
+          <button
+            type="button"
+            class="gallery-arrow"
+            id="projectsNext"
+            aria-label="Next projects"
+          >
+            &rarr;
+          </button>
         </div>
       </section>
       <section class="team-section">
@@ -308,179 +292,14 @@
         </button>
       </section>
 
-      <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll(".slide");
-        const dots = document.querySelectorAll(".dot");
-
-        function showSlide(index) {
-          slides.forEach((slide) => slide.classList.remove("active"));
-          dots.forEach((dot) => dot.classList.remove("active"));
-          slides[index].classList.add("active");
-          dots[index].classList.add("active");
-        }
-
-        function currentSlide(index) {
-          slideIndex = index;
-          showSlide(slideIndex);
-        }
-
-        function autoSlide() {
-          const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-          if (isLoggedIn) {
-            // Logged in: video (2) -> house (1) -> video (2) -> ...
-            if (slideIndex === 2) {
-              slideIndex = 1;
-            } else {
-              slideIndex = 2;
-            }
-          } else {
-            slideIndex = (slideIndex + 1) % 2;
-          }
-          showSlide(slideIndex);
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-          const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-          if (isLoggedIn) {
-            slideIndex = 2;
-            showSlide(slideIndex);
-          }
-        });
-
-        setInterval(autoSlide, 4000);
-
-        const scrollDots = document.querySelectorAll(".scroll-dot");
-        const gallery = document.getElementById("mainGallery");
-        const projectItems = document.querySelectorAll(".project-item");
-
-        function scrollToProject(index) {
-          if (!projectItems || projectItems.length === 0) return;
-
-          const itemWidth = projectItems[0].offsetWidth + 24; // width + gap
-          const scrollPosition = index * itemWidth;
-
-          if (gallery) {
-            gallery.scrollTo({
-              left: scrollPosition,
-              behavior: "smooth",
-            });
-          }
-
-          scrollDots.forEach((dot) => dot.classList.remove("active"));
-          if (scrollDots[index]) {
-            scrollDots[index].classList.add("active");
-          }
-        }
-
-        scrollDots.forEach((dot) => {
-          dot.addEventListener("click", function (e) {
-            e.preventDefault();
-            const activeIndex = Array.from(scrollDots).findIndex((d) =>
-              d.classList.contains("active"),
-            );
-            console.log("Active index:", activeIndex);
-            const nextIndex = (activeIndex + 1) % scrollDots.length;
-            console.log("Next index:", nextIndex);
-            scrollToProject(nextIndex);
-          });
-        });
-
-        if (gallery) {
-          gallery.addEventListener("scroll", function () {
-            const scrollLeft = gallery.scrollLeft;
-            const itemWidth = projectItems[0].offsetWidth + 24;
-            const activeIndex = Math.round(scrollLeft / itemWidth);
-
-            if (activeIndex >= 0 && activeIndex < scrollDots.length) {
-              scrollDots.forEach((dot) => dot.classList.remove("active"));
-              if (scrollDots[activeIndex]) {
-                scrollDots[activeIndex].classList.add("active");
-              }
-            }
-          });
-        }
-
-        function animateCounter(element, target, suffix = "", duration = 2000) {
-          let start = 1;
-          const increment = (target - 1) / (duration / 16);
-          const timer = setInterval(() => {
-            start += increment;
-            if (start >= target) {
-              element.textContent = target + suffix;
-              clearInterval(timer);
-            } else {
-              element.textContent = Math.floor(start) + suffix;
-            }
-          }, 16);
-        }
-
-        window.addEventListener("DOMContentLoaded", function () {
-          const statNumbers = document.querySelectorAll(".stat-number");
-          statNumbers.forEach(function (element) {
-            const target = parseInt(element.getAttribute("data-target"));
-            const id = element.parentElement.id;
-            let suffix = "";
-            if (id === "projectsBtn") {
-              suffix = "+";
-            } else if (id === "awardsBtn") {
-              suffix = "k";
-            }
-            animateCounter(element, target, suffix);
-          });
-        });
-
-        let testimonialIndex = 0;
-        const testimonialsSlider =
-          document.getElementById("testimonialsSlider");
-        const testimonialCards = document.querySelectorAll(".testimonial-card");
-
-        function showTestimonial(index) {
-          if (!testimonialsSlider || !testimonialCards.length) return;
-          const cardWidth = testimonialCards[0].offsetWidth + 20;
-          testimonialsSlider.style.transform = `translateX(-${index * cardWidth}px)`;
-        }
-
-        function nextTestimonial() {
-          if (!testimonialCards.length) return;
-          testimonialIndex = (testimonialIndex + 1) % testimonialCards.length;
-          showTestimonial(testimonialIndex);
-        }
-
-        function prevTestimonial() {
-          if (!testimonialCards.length) return;
-          testimonialIndex =
-            (testimonialIndex - 1 + testimonialCards.length) %
-            testimonialCards.length;
-          showTestimonial(testimonialIndex);
-        }
-
-        const contactToggle = document.getElementById("contact-toggle");
-        if (contactToggle) {
-          contactToggle.addEventListener("click", () => {
-            contactToggle.textContent = "Good choice";
-          });
-        }
-
-        const iconCircle = document.querySelector(".icon-circle");
-        if (iconCircle) {
-          iconCircle.style.cursor = "pointer";
-          iconCircle.addEventListener("click", () => {
-            window.location.href = "projects.html";
-          });
-        }
-      </script>
-
       <section class="company">
         <div class="detail-discreption">
           <p class="tittle-12">The Company</p>
           <p><span class="span">━━━</span> ━━━━━━━━━━</p>
           <p>
-            "The Department of Buildings ensures the safety of everyone who
-            builds, works, and lives within the community. By regulating
-            construction standards and overseeing building compliance, the
-            department fosters sustainable development and structural integrity
-            across the city."
+            Stonewise Construction is committed to delivering reliable,
+            high-quality construction solutions with a strong focus on safety,
+            craftsmanship, and lasting results.
           </p>
           <img src="images/icon/facebook-logo.png" alt="facebook" />
           <img src="images/icon/twitter-logo.png" alt="twitter" />
@@ -491,11 +310,11 @@
           <p class="tittle-12">Construction Office</p>
           <p><span class="span">━━━</span> ━━━━━━━━━━</p>
           <div>
-            <p>121 constructon avenue</p>
-            <p>+1234355</p>
-            <p>codingexpert1986@gmail.com</p>
-            <p>+123445</p>
-            <p>codingexpert1986@gmail.com</p>
+            <div>
+              <p>22 Kings Avenue, Lagos, Nigeria</p>
+              <p>08169615541</p>
+              <p>codingexpert1986@gmail.com</p>
+            </div>
           </div>
         </div>
         <div class="customer">
@@ -517,7 +336,7 @@
         <footer>
           &copy; Copyright 2010 &ndash; 2026. All Rights Reserved.
         </footer>
-        <p><a href="#privacy" class="privacy-link">Privacy Policy</a></p>
+        <p><a href="privacy.html" class="privacy-link">Privacy Policy</a></p>
       </div>
     </main>
   </body>

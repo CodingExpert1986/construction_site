@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile.css" />
   </head>
   <body>
-    <script src="script.js"></script>
-
     <header class="logo">
       <div><img src="images/icon/logo-1-1.png" alt="logo" /></div>
     </header>
@@ -44,10 +43,11 @@
         <span class="page-title">Contact</span>
       </div>
     </div>
+
     <main>
       <div class="map-top">
         <iframe
-          src="https://www.google.com"
+          src="https://maps.google.com/maps?q=22+Kings+Avenue,+Lagos,+Nigeria&output=embed"
           width="100%"
           height="450"
           style="border: 0"
@@ -57,31 +57,32 @@
         >
         </iframe>
       </div>
+
       <div class="contact-image-text">
         <div class="contact-left">
-          <img src="images/icon/work5.jpeg" alt="" />
+          <img src="images/icon/work5.jpeg" alt="Our Workplace" />
           <div class="contact-details">
             <p><strong>📞 Phone</strong></p>
-            <p>+123445</p>
+            <p>08169615541</p>
             <p>codingexpert1986@gmail.com</p>
-            <p>3Dcontructionlimited@gmail.com</p>
             <p><strong>📍 Address</strong></p>
-            <p>121 constructon avenue</p>
+            <p>22 Kings Avenue, Lagos, Nigeria</p>
           </div>
         </div>
+
         <div class="contact-description">
           <h4>
-            <span class="span">━━━ </span
-            ><strong
+            <span class="span">━━━ </span>
+            <strong
               >Contact The
               <span class="span">Construction Company</span></strong
             >
           </h4>
           <p>
-            "Call or submit our online form to request an estimate or for
-            general questions about Company Certified Contractors and our
-            services. We look forward to serving you!"
+            Contact Stonewise Construction for project estimates and questions
+            about our services. This frontend demo form does not send messages.
           </p>
+
           <div class="contact-form">
             <form id="contactForm">
               <label for="contactName">Your name(*)</label>
@@ -101,7 +102,7 @@
               <label for="contactDepartment">Business Department</label>
               <select id="contactDepartment" name="business-department">
                 <option value="general">Business Department</option>
-                <option value="personal">Personal Department</option>
+                <option value="projects">Projects Department</option>
                 <option value="support">Support Department</option>
                 <option value="other">Other</option>
               </select>
@@ -115,7 +116,7 @@
                 required
               ></textarea>
 
-              <button type="button" id="contactSubmit" class="button-btnn">
+              <button type="submit" id="contactSubmit" class="button-btnn">
                 Send
               </button>
             </form>
@@ -143,9 +144,8 @@
         </div>
         <h2 class="detail-text">Start a new project with us</h2>
       </div>
-
       <button class="button-btn" id="contact-toggle">
-        Contact us Today >>
+        Contact us Today &gt;&gt;
       </button>
     </div>
 
@@ -154,26 +154,22 @@
         <p class="tittle-12">The Company</p>
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <p>
-          "The Department of Buildings ensures the safety of everyone who
-          builds, works, and lives within the community. By regulating
-          construction standards and overseeing building compliance, the
-          department fosters sustainable development and structural integrity
-          across the city."
+          Stonewise Construction is committed to delivering reliable,
+          high-quality construction solutions with a strong focus on safety,
+          craftsmanship, and lasting results.
         </p>
-
         <img src="images/icon/facebook-logo.png" alt="facebook" />
         <img src="images/icon/twitter-logo.png" alt="twitter" />
         <img src="images/icon/youtube-logo.png" alt="youtube" />
         <img src="images/icon/instagram-logo.png" alt="instagram" />
       </div>
+
       <div class="contact">
         <p class="tittle-12">Construction Office</p>
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <div>
-          <p>121 constructon avenue</p>
-          <p>+1234355</p>
-          <p>codingexpert1986@gmail.com</p>
-          <p>+123445</p>
+          <p>22 Kings Avenue, Lagos, Nigeria</p>
+          <p>08169615541</p>
           <p>codingexpert1986@gmail.com</p>
         </div>
       </div>
@@ -183,7 +179,7 @@
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <div class="working-hour">
           <p>
-            Our support available to help you 24 <br />hours a day, seven days a
+            Our support is available to help you 24 hours a day, seven days a
             week.
           </p>
           <p>Monday to Friday 8AM ━ 4PM</p>
@@ -195,40 +191,9 @@
 
     <div class="footer">
       <footer>&copy; Copyright 2010 &ndash; 2026. All Rights Reserved.</footer>
-      <p><a href="#privacy" class="privacy-link">Privacy Policy</a></p>
+      <p><a href="privacy.html" class="privacy-link">Privacy Policy</a></p>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const contactSubmit = document.getElementById("contactSubmit");
-        if (contactSubmit) {
-          contactSubmit.addEventListener("click", () => {
-            const name = document.getElementById("contactName").value.trim();
-            const email = document.getElementById("contactEmail").value.trim();
-            const subject = document
-              .getElementById("contactSubject")
-              .value.trim();
-            const department =
-              document.getElementById("contactDepartment").value;
-            const message = document
-              .getElementById("contactMessage")
-              .value.trim();
-
-            if (!name || !email || !message) {
-              return alert("Please fill in all required fields.");
-            }
-
-            submitContactForm({ name, email, subject, department, message });
-          });
-        }
-
-        const contactToggle = document.getElementById("contact-toggle");
-        if (contactToggle) {
-          contactToggle.addEventListener("click", () => {
-            contactToggle.textContent = "Good choice";
-          });
-        }
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

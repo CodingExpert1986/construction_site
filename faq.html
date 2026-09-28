@@ -3,12 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faq</title>
+    <title>Frequently Asked Questions | Stonewise Construction</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile.css" />
   </head>
   <body>
-    <script src="script.js"></script>
-
     <header class="logo">
       <div><img src="images/icon/logo-1-1.png" alt="logo" /></div>
     </header>
@@ -52,7 +51,7 @@
         </div>
 
         <div class="form">
-          <button class="button-btn-1" type="button">Ask US</button>
+          <a class="button-btn-1" href="#faqForm">Ask Us</a>
           <form id="faqForm">
             <label for="faqName">Your name(*)</label><br />
             <input
@@ -76,7 +75,7 @@
             <label for="faqDepartment">Business Department</label><br />
             <select id="faqDepartment" name="business-department">
               <option value="general">Business Department</option>
-              <option value="personal">Personal Department</option>
+              <option value="projects">Projects Department</option>
               <option value="support">Support Department</option>
               <option value="other">Other</option>
             </select>
@@ -92,9 +91,7 @@
             ></textarea>
             <br /><br />
 
-            <button type="button" id="faqSubmit" class="button-btn-1">
-              Ask
-            </button>
+            <button class="button-btn-1" type="submit">Ask Us</button>
           </form>
         </div>
       </div>
@@ -102,15 +99,16 @@
       <div class="faq-description">
         <div class="faq-title">
           <h2>
-            <span class="span">━━ </span>Do you have
+            <span class="span"> </span>Do you have <br />
             <span class="span">Questions?</span>
           </h2>
         </div>
         <p class="faq-subtitle">
-          Please read questions below and if you cannot find your answer, please
-          send your question. We will answer you as soon as possible.
+          Please review the questions below. If you cannot find the answer you
+          need, feel free to send us your question and we will respond as soon
+          as possible.
         </p>
-        <h1><span class="circl">?</span>F.A.QS</h1>
+        <h1><span class="circl">?</span> FAQs</h1>
         <div class="accordion">
           <button class="accordion-header" aria-expanded="false" type="button">
             <span>How do I request a construction quote?</span>
@@ -118,8 +116,9 @@
           </button>
           <div class="accordion-body" hidden>
             <p>
-              Visit our contact page or use the form to share your project
-              details. We will respond with a tailored estimate and next steps.
+              Use our contact page or the form on this FAQ page to share your
+              project details. Our team will review your request and respond
+              with the appropriate next steps.
             </p>
           </div>
         </div>
@@ -131,8 +130,9 @@
           </button>
           <div class="accordion-body" hidden>
             <p>
-              We handle residential and commercial construction, remodeling,
-              renovation, site planning, and civil construction services.
+              We handle building construction, civil and structural engineering,
+              road construction, infrastructure development, transportation
+              engineering, and other specialized construction services.
             </p>
           </div>
         </div>
@@ -144,13 +144,15 @@
           </button>
           <div class="accordion-body" hidden>
             <p>
-              Yes. Use our contact page or call us directly to schedule a
-              project consultation and review your requirements.
+              Yes. You can use our contact page or call us directly to schedule
+              a consultation. We will discuss your project requirements and
+              determine the appropriate next steps.
             </p>
           </div>
         </div>
       </div>
     </main>
+
     <div class="detail" id="detail-section">
       <div class="detail-heading">
         <div class="icon-circle" aria-hidden="true">
@@ -172,7 +174,7 @@
       </div>
 
       <button class="button-btn" id="contact-toggle">
-        Contact us Today >>
+        Contact us Today &gt;&gt;
       </button>
     </div>
 
@@ -181,26 +183,24 @@
         <p class="tittle-12">The Company</p>
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <p>
-          "The Department of Buildings ensures the safety of everyone who
-          builds, works, and lives within the community. By regulating
-          construction standards and overseeing building compliance, the
-          department fosters sustainable development and structural integrity
-          across the city."
+          Stonewise Construction is committed to delivering reliable,
+          high-quality construction solutions with a strong focus on safety,
+          craftsmanship, and lasting results.
         </p>
 
-        <img src="images/icon/facebook-logo.png" alt="facebook" />
-        <img src="images/icon/twitter-logo.png" alt="twitter" />
-        <img src="images/icon/youtube-logo.png" alt="youtube" />
-        <img src="images/icon/instagram-logo.png" alt="instagram" />
+        <div>
+          <img src="images/icon/facebook-logo.png" alt="facebook" />
+          <img src="images/icon/twitter-logo.png" alt="twitter" />
+          <img src="images/icon/youtube-logo.png" alt="youtube" />
+          <img src="images/icon/instagram-logo.png" alt="instagram" />
+        </div>
       </div>
       <div class="contact">
         <p class="tittle-12">Construction Office</p>
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <div>
-          <p>121 constructon avenue</p>
-          <p>+1234355</p>
-          <p>codingexpert1986@gmail.com</p>
-          <p>+123445</p>
+          <p>22 Kings Avenue, Lagos, Nigeria</p>
+          <p>08169615541</p>
           <p>codingexpert1986@gmail.com</p>
         </div>
       </div>
@@ -210,8 +210,8 @@
         <p><span class="span">━━━</span> ━━━━━━━━━━</p>
         <div class="working-hour">
           <p>
-            Our support available to help you 24 <br />hours a day, seven days a
-            week.
+            Our support is available to help you 24 <br />hours a day, seven
+            days a week.
           </p>
           <p>Monday to Friday 8AM ━ 4PM</p>
           <p>Saturday 8AM ━ 1PM</p>
@@ -222,49 +222,9 @@
 
     <div class="footer">
       <footer>&copy; Copyright 2010 &ndash; 2026. All Rights Reserved.</footer>
-      <p><a href="#privacy" class="privacy-link">Privacy Policy</a></p>
+      <p><a href="privacy.html" class="privacy-link">Privacy Policy</a></p>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // FAQ form submission
-        const faqSubmit = document.getElementById("faqSubmit");
-        if (faqSubmit) {
-          faqSubmit.addEventListener("click", () => {
-            const name = document.getElementById("faqName").value.trim();
-            const email = document.getElementById("faqEmail").value.trim();
-            const subject = document.getElementById("faqSubject").value.trim();
-            const department = document.getElementById("faqDepartment").value;
-            const question = document
-              .getElementById("faqQuestion")
-              .value.trim();
 
-            if (!name || !email || !question) {
-              return alert("Please fill in all required fields.");
-            }
-
-            submitFaqForm({ name, email, subject, department, question });
-          });
-        }
-
-        document.querySelectorAll(".accordion-header").forEach((button) => {
-          button.addEventListener("click", () => {
-            const isOpen = button.getAttribute("aria-expanded") === "true";
-            button.setAttribute("aria-expanded", String(!isOpen));
-            const panel = button.nextElementSibling;
-            if (panel) {
-              panel.hidden = isOpen;
-            }
-          });
-        });
-
-        // Contact button functionality
-        const contactToggle = document.getElementById("contact-toggle");
-        if (contactToggle) {
-          contactToggle.addEventListener("click", () => {
-            contactToggle.textContent = "Good choice";
-          });
-        }
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
